@@ -20,4 +20,9 @@ public class Carta {
         for(char c : numero.toCharArray())
             if(!conjuntoNumeros.add(c)) pontos += 4;
     }
+
+    @Override
+    public String toString(){
+        return numero + " ";
+    }
 }
