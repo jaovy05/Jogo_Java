@@ -11,7 +11,7 @@ public class Tabuleiro {
         //usa deck para colunas
         for(int i = 0; i < 5; i++) {
             tabuleiro.add(new LinkedList<>());
-            tabuleiro.get(i).add(baralho.comprar());
+            tabuleiro.get(i).addLast(baralho.comprar());
         }
     }
     
@@ -20,6 +20,23 @@ public class Tabuleiro {
         for (int i = 0; i < 5; i++) {
             for(Carta c : tabuleiro.get(i)) System.out.print(c.toString());
             System.out.println();
+            
+        }
+    }
+
+    public void rodada(){
+       
+        for(Jogador j : jogadores){
+            boolean naoEscolheu = true;
+            while (naoEscolheu){
+                try {
+                    j.CartaJogada = (escolherCarta(j));
+                    naoEscolheu = false;
+                } catch(Exception e){
+                    System.out.println(e.getMessage());
+                }
+            }
+            
         }
     }
 
