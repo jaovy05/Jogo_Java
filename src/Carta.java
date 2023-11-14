@@ -2,8 +2,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Carta {
-    public String numero;
-    public int pontos;
+    private String numero;
+    private int pontos;
 
     public Carta(String numero){
         pontos = 1;
@@ -24,5 +24,21 @@ public class Carta {
     @Override
     public String toString(){
         return numero + " ";
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
     }
 }

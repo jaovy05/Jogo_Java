@@ -22,7 +22,7 @@ public class Baralho {
         Collections.shuffle(baralho);
     }
 
-    public Carta comprar(){
-        
+    public Carta comprar() throws Exception{
+        throw new Exception("Falta implementar o método");
     }
 }
