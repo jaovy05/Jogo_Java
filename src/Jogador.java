@@ -2,18 +2,18 @@ import java.util.List;
 
 public class Jogador {
     private String nome;
-    private List<Cartas> maoJogador;
+    private List<Carta> maoJogador;
 
-    public Jogador(String nome, List<Cartas> maoJogador) {
+    public Jogador(String nome, List<Carta> maoJogador) {
         this.nome = nome;
         this.maoJogador = maoJogador;
     }
 
-    public void mostrarCartas(){
+    public void mostrarCarta(){
 
     }
 
-    public Cartas escolherCarta() {
+    public Carta escolherCarta() {
         //return cartaEscolhida;
     }
 

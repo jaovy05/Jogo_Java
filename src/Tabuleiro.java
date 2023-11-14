@@ -52,14 +52,14 @@ public class Tabuleiro {
         Scanner sc = new Scanner(System.in);
         System.out.println("Escolha sua carta " + jogador.nome + ":");
         for (int i = 0; i < 5; i++) {
-            for(Carta c : jogador.mao) System.out.print(c.toString());
+            for(Carta c : jogador.maoJogador) System.out.print(c.toString());
             System.out.println();
         }
         String numero = sc.next();
         sc.close();
-        for(Carta c : jogador.mao) 
+        for(Carta c : jogador.maoJogador) 
             if(c.numero.equals(numero)) {
-                jogador.mao.remove(c);
+                jogador.maoJogador.remove(c);
                 return c;
             }
 
