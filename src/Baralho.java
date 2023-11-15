@@ -13,7 +13,7 @@ public class Baralho {
     private List<Carta> criaMonte() {
         List<Carta> novoBaralho = new ArrayList<>();
         for (int i = 1; i <= 109; i++) {
-            novoBaralho.add(new Carta(Integer.toString(i)));
+            novoBaralho.add(new Carta(i));
         }
         return novoBaralho;
     }
@@ -24,5 +24,9 @@ public class Baralho {
 
     public Carta comprar() throws Exception{
         throw new Exception("Falta implementar o método");
+    }
+
+    public List<Carta> getBaralho() {
+        return baralho;
     }
 }

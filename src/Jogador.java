@@ -1,16 +1,20 @@
-import java.util.List;
+import java.util.*;
 
 public class Jogador {
     private String nome;
     private List<Carta> maoJogador;
     private Carta cartaJogada;
 
-    public Jogador(String nome) {
+    public Jogador(String nome, Baralho baralho) {
         this.nome = nome;
         this.maoJogador = maoJogador;
     }
 
     public void mostrarCarta(){
+
+    }
+
+    public void comprarLinha(LinkedList<Carta> linha){
 
     }
 
@@ -29,10 +33,6 @@ public class Jogador {
 
     public List<Carta> getMaoJogador() {
         return maoJogador;
-    }
-
-    public void setMaoJogador(List<Carta> maoJogador) {
-        this.maoJogador = maoJogador;
     }
     
     public Carta getCartaJogada() {

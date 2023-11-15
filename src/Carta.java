@@ -2,23 +2,23 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Carta {
-    private String numero;
-    private int pontos;
+    private Integer numero;
+    private Integer pontos;
 
-    public Carta(String numero){
+    public Carta(int numero){
         pontos = 1;
-        if(Integer.parseInt(numero) % 10 == 5) pontos ++;
-        else if(Integer.parseInt(numero) % 10 == 0) pontos += 2;
+        if(numero % 10 == 5) pontos ++;
+        else if(numero % 10 == 0) pontos += 2;
         numeroRepetido(numero);
 
         this.numero = numero;
     }
 
-    private void numeroRepetido(String numero){
-        Set<Character> conjuntoNumeros = new HashSet<>();
-        //Se não for possivel adicionar o char, é porque tem um elemento repetido no conjunto
-        for(char c : numero.toCharArray())
-            if(!conjuntoNumeros.add(c)) pontos += 4;
+    private void numeroRepetido(int numero){
+        Set<Integer> conjuntoNumeros = new HashSet<>();
+        //Se não for possivel adicionar o int, é porque tem um elemento repetido no conjunto
+        for(int i = 1; i <= numero; i *= 10)
+            if(!conjuntoNumeros.add( (numero / i) % 10 )) pontos += 4;
     }
 
     @Override
@@ -26,19 +26,19 @@ public class Carta {
         return numero + " ";
     }
 
-    public String getNumero() {
-        return numero;
-    }
-
-    public void setNumero(String numero) {
-        this.numero = numero;
-    }
-
-    public int getPontos() {
+    public Integer getPontos() {
         return pontos;
     }
 
-    public void setPontos(int pontos) {
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public void setPontos(Integer pontos) {
         this.pontos = pontos;
     }
 }
