@@ -1,9 +1,9 @@
 import java.util.*;
 
 public class Tabuleiro {
-    private Baralho baralho = new Baralho();
-    private List<Jogador> jogadores = new ArrayList<>();
-    private List<LinkedList<Carta>> tabuleiro;
+    public Baralho baralho = new Baralho();
+    public List<Jogador> jogadores = new ArrayList<>();
+    public List<LinkedList<Carta>> tabuleiro;
 
     public Tabuleiro(int qtdJogadores){
         Scanner sc = new Scanner(System.in);
@@ -73,7 +73,7 @@ public class Tabuleiro {
         Scanner sc = new Scanner(System.in);
         System.out.println("Escolha sua carta " + jogador.getNome() + ":");
         for (int i = 0; i < 5; i++) {
-            for(Carta c : jogador.getMaoJogador()) System.out.print(c.toString());
+            for(Carta c : jogador.getMaoJogador()) System.out.print(c);
             System.out.println();
         }
         Integer numero = sc.nextInt();
@@ -100,6 +100,13 @@ public class Tabuleiro {
     }
 
     public Integer posMaiorElemento(){
-        throw new RuntimeException();
+        Integer pos = 0, maior = 0;
+        for(int i = 0; i < 5; i++){
+            if(maior < tabuleiro.get(i).getLast().getNumero()){
+                maior = tabuleiro.get(i).getLast().getNumero();
+                pos = i;
+            }
+        }
+        return pos;
     }
 }
