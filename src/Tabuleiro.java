@@ -7,13 +7,14 @@ public class Tabuleiro {
 
     public Tabuleiro(int qtdJogadores){
         Scanner sc = new Scanner(System.in);
-
+        
+        //for para adicionar a quantidade de jogadores informada no parâmetro do construtor
         for(int i = 0; i < qtdJogadores; i++){ 
             System.out.println("Digite seu nome: ");
             String nome = sc.nextLine();
             jogadores.add(new Jogador(nome, baralho));
         }
-
+        //Arraylist para as linhas
         tabuleiro = new ArrayList<>(5);
         //usa deck para colunas
         for(int i = 0; i < 5; i++) {
@@ -24,6 +25,7 @@ public class Tabuleiro {
                 System.out.println(e.getMessage());
             }
         }
+        printTabuleiro();
         sc.close();
     }
     
@@ -32,7 +34,6 @@ public class Tabuleiro {
         for (int i = 0; i < 5; i++) {
             for(Carta c : tabuleiro.get(i)) System.out.print(c.toString());
             System.out.println();
-            
         }
     }
 
@@ -56,9 +57,11 @@ public class Tabuleiro {
             else {
                 if(tabuleiro.get(indexAntecessor).size() ==  5)
                     j.comprarLinha(tabuleiro.get(indexAntecessor));
-                else tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
+                tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
             }
         }
+        printTabuleiro();
+        printJogadores();
     }
 
     public void printJogadores(){
@@ -108,5 +111,6 @@ public class Tabuleiro {
             }
         }
         return pos;
+        
     }
 }
