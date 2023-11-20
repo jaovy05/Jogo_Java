@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SelecaoController">
    <children>
       <Label alignment="CENTER" layoutX="45.0" layoutY="113.0" prefHeight="59.0" prefWidth="418.0" text="Escolha de jogadores" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
@@ -15,6 +17,21 @@
       <Label alignment="TOP_RIGHT" layoutX="526.0" layoutY="192.0" prefHeight="48.0" prefWidth="57.0" text="0/3" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Icon" fitHeight="141.0" fitWidth="140.0" layoutX="14.0" layoutY="72.0" onMouseClicked="#escolherIcon">
+         <image>
+           <Image url="@../img/IconVazio.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Nome" layoutX="142.0" layoutY="138.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="142.0" layoutY="118.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
          </font>
       </Label>
    </children>
