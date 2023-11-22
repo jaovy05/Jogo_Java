@@ -32,7 +32,7 @@ public class SelecaoController implements Initializable{
     }
     
     @FXML
-    private ImageView IconP1, IconP2, IconP3, IconP4, IconP5, IconP6;
+    private ImageView IconP0, IconP1, IconP2, IconP3, IconP4, IconP5;
 
     @FXML
     private TextField NomeP1, NomeP2, NomeP3, NomeP4, NomeP5, NomeP6;
@@ -42,18 +42,54 @@ public class SelecaoController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        IconP1.setImage(imagens.get(0));
-        IconP2.setImage(imagens.get(1));
-        IconP3.setImage(imagens.get(2));
-        IconP4.setImage(imagens.get(3));
-        IconP5.setImage(imagens.get(4));
-        IconP6.setImage(imagens.get(5));
+        IconP0.setImage(imagens.get(0));
+        IconP1.setImage(imagens.get(1));
+        IconP2.setImage(imagens.get(2));
+        IconP3.setImage(imagens.get(3));
+        IconP4.setImage(imagens.get(4));
+        IconP5.setImage(imagens.get(5));
+        
         qtdJogadores.setText("0/6");
     }
         
 
     @FXML
-    void escolherIcon(MouseEvent event) throws IOException {
+    void escolherIconP0(MouseEvent event) throws IOException {
+        index = 0;
+        abrirOpcoes(event);
+    }
+
+    @FXML
+    void escolherIconP1(MouseEvent event) throws IOException{
+        index = 1;
+        abrirOpcoes(event);
+    }
+
+    @FXML
+    void escolherIconP2(MouseEvent event) throws IOException{
+        index = 2;
+        abrirOpcoes(event);
+    }
+
+    @FXML
+    void escolherIconP3(MouseEvent event) throws IOException{
+        index = 3;
+        abrirOpcoes(event);
+    }
+
+    @FXML
+    void escolherIconP4(MouseEvent event) throws IOException{
+        index = 4;
+        abrirOpcoes(event);
+    }
+
+    @FXML
+    void escolherIconP5(MouseEvent event) throws IOException{
+        index = 5;
+        abrirOpcoes(event);
+    }
+
+    void abrirOpcoes(MouseEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("opcoesLayout.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);

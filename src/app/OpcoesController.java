@@ -17,97 +17,97 @@ public class OpcoesController {
 
     @FXML
     void escolheu1(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op1.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op1.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu10(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op10.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op10.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu11(MouseEvent event) throws IOException {
-        SelecaoController.imagens.set(0, op11.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op11.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu12(MouseEvent event) throws IOException {
-        SelecaoController.imagens.set(0, op12.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op12.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu13(MouseEvent event) throws IOException {
-        SelecaoController.imagens.set(0, op13.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op13.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu14(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op14.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op14.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu15(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op15.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op15.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu16(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op16.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op16.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu2(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op2.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op2.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu3(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op3.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op3.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu4(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op4.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op4.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu5(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op5.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op5.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu6(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op6.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op6.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu7(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op7.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op7.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu8(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op8.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op8.getImage());
         abrirSelecao(event);
     }
 
     @FXML
     void escolheu9(MouseEvent event) throws IOException{
-        SelecaoController.imagens.set(0, op9.getImage());
+        SelecaoController.imagens.set(SelecaoController.index, op9.getImage());
         abrirSelecao(event);
     }
 
