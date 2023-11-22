@@ -7,29 +7,104 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SelecaoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SelecaoController">
    <children>
       <Label alignment="CENTER" layoutX="45.0" layoutY="113.0" prefHeight="59.0" prefWidth="418.0" text="Escolha de jogadores" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <Label alignment="TOP_RIGHT" layoutX="526.0" layoutY="192.0" prefHeight="48.0" prefWidth="57.0" text="0/3" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+      <Label fx:id="qtdJogadores" alignment="TOP_RIGHT" layoutX="526.0" layoutY="192.0" prefHeight="48.0" prefWidth="57.0" text="0/6" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="Icon" fitHeight="141.0" fitWidth="140.0" layoutX="14.0" layoutY="72.0" onMouseClicked="#escolherIcon">
+      <ImageView fx:id="IconP1" fitHeight="141.0" fitWidth="140.0" layoutX="14.0" layoutY="72.0" onMouseClicked="#escolherIcon">
          <image>
            <Image url="@../img/IconVazio.png" />
          </image>
       </ImageView>
-      <TextField fx:id="Nome" layoutX="142.0" layoutY="138.0">
+      <TextField fx:id="NomeP1" layoutX="142.0" layoutY="138.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
       <Label layoutX="142.0" layoutY="118.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="IconP2" fitHeight="141.0" fitWidth="140.0" layoutX="343.0" layoutY="68.0" onMouseClicked="#escolherIcon">
+         <image>
+            <Image url="@../img/IconVazio.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="NomeP2" layoutX="471.0" layoutY="134.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="471.0" layoutY="114.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="IconP3" fitHeight="141.0" fitWidth="140.0" layoutX="14.0" layoutY="178.0" onMouseClicked="#escolherIcon">
+         <image>
+            <Image url="@../img/IconVazio.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="NomeP3" layoutX="142.0" layoutY="244.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="142.0" layoutY="224.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="IconP4" fitHeight="141.0" fitWidth="140.0" layoutX="343.0" layoutY="174.0" onMouseClicked="#escolherIcon">
+         <image>
+            <Image url="@../img/IconVazio.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="NomeP4" layoutX="471.0" layoutY="240.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="471.0" layoutY="220.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="IconP5" fitHeight="141.0" fitWidth="140.0" layoutX="14.0" layoutY="276.0" onMouseClicked="#escolherIcon">
+         <image>
+            <Image url="@../img/IconVazio.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="NomeP5" layoutX="142.0" layoutY="342.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="142.0" layoutY="322.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="IconP6" fitHeight="141.0" fitWidth="140.0" layoutX="343.0" layoutY="272.0" onMouseClicked="#escolherIcon">
+         <image>
+            <Image url="@../img/IconVazio.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="NomeP6" layoutX="471.0" layoutY="338.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="471.0" layoutY="318.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
          <font>
             <Font size="14.0" />
          </font>
