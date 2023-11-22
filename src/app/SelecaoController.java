@@ -15,11 +15,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class SelecaoController implements Initializable{
-
+    private int jogadoresvalidos = 0;
     public static int index;
     public static List<Image> imagens = new ArrayList<>();
     static{
@@ -35,7 +36,7 @@ public class SelecaoController implements Initializable{
     private ImageView IconP0, IconP1, IconP2, IconP3, IconP4, IconP5;
 
     @FXML
-    private TextField NomeP1, NomeP2, NomeP3, NomeP4, NomeP5, NomeP6;
+    private TextField NomeP0, NomeP1, NomeP2, NomeP3, NomeP4, NomeP5;
 
     @FXML
     private Label qtdJogadores;
@@ -49,7 +50,7 @@ public class SelecaoController implements Initializable{
         IconP4.setImage(imagens.get(4));
         IconP5.setImage(imagens.get(5));
         
-        qtdJogadores.setText("0/6");
+        qtdJogadores.setText(jogadoresvalidos + "/6");
         qtdJogadores.setStyle("-fx-text-fill: red;");
     }
         
@@ -88,6 +89,18 @@ public class SelecaoController implements Initializable{
     void escolherIconP5(MouseEvent event) throws IOException{
         index = 5;
         abrirOpcoes(event);
+    }
+
+    @FXML
+    void verificarJogadores(KeyEvent event) {
+        jogadoresvalidos = 0;
+        if(NomeP0.getText() != "") jogadoresvalidos++;
+        if(NomeP1.getText() != "") jogadoresvalidos++;
+        if(NomeP2.getText() != "") jogadoresvalidos++;
+        if(NomeP3.getText() != "") jogadoresvalidos++;
+        if(NomeP4.getText() != "") jogadoresvalidos++;
+        if(NomeP5.getText() != "") jogadoresvalidos++;
+        qtdJogadores.setText(jogadoresvalidos + "/6");
     }
 
     void abrirOpcoes(MouseEvent event) throws IOException{

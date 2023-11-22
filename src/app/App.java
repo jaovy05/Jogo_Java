@@ -15,7 +15,7 @@ public class App extends Application{
         Scene tela = new Scene(root);
         primaryStage.setScene(tela);
         primaryStage.show();
-    }
+    }    
     public static void main(String[] args) {
         launch(args);
     }

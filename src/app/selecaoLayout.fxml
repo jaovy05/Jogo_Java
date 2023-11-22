@@ -24,7 +24,7 @@
            <Image url="@../img/IconVazio.png" />
          </image>
       </ImageView>
-      <TextField fx:id="NomeP1" layoutX="183.0" layoutY="115.0">
+      <TextField fx:id="NomeP0" layoutX="183.0" layoutY="115.0" onKeyReleased="#verificarJogadores">
          <font>
             <Font size="14.0" />
          </font>
@@ -39,7 +39,7 @@
             <Image url="@../img/IconVazio.png" />
          </image>
       </ImageView>
-      <TextField fx:id="NomeP2" layoutX="512.0" layoutY="111.0">
+      <TextField fx:id="NomeP1" layoutX="512.0" layoutY="111.0" onKeyReleased="#verificarJogadores">
          <font>
             <Font size="14.0" />
          </font>
@@ -54,7 +54,7 @@
             <Image url="@../img/IconVazio.png" />
          </image>
       </ImageView>
-      <TextField fx:id="NomeP3" layoutX="183.0" layoutY="221.0">
+      <TextField fx:id="NomeP2" layoutX="183.0" layoutY="221.0" onKeyReleased="#verificarJogadores">
          <font>
             <Font size="14.0" />
          </font>
@@ -69,7 +69,7 @@
             <Image url="@../img/IconVazio.png" />
          </image>
       </ImageView>
-      <TextField fx:id="NomeP4" layoutX="512.0" layoutY="217.0">
+      <TextField fx:id="NomeP3" layoutX="512.0" layoutY="217.0" onKeyReleased="#verificarJogadores">
          <font>
             <Font size="14.0" />
          </font>
@@ -84,7 +84,7 @@
             <Image url="@../img/IconVazio.png" />
          </image>
       </ImageView>
-      <TextField fx:id="NomeP5" layoutX="183.0" layoutY="319.0">
+      <TextField fx:id="NomeP4" layoutX="183.0" layoutY="319.0" onKeyReleased="#verificarJogadores">
          <font>
             <Font size="14.0" />
          </font>
@@ -99,7 +99,7 @@
             <Image url="@../img/IconVazio.png" />
          </image>
       </ImageView>
-      <TextField fx:id="NomeP6" layoutX="512.0" layoutY="315.0">
+      <TextField fx:id="NomeP5" layoutX="512.0" layoutY="315.0" onKeyReleased="#verificarJogadores">
          <font>
             <Font size="14.0" />
          </font>
