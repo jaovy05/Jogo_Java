@@ -50,6 +50,7 @@ public class SelecaoController implements Initializable{
         IconP5.setImage(imagens.get(5));
         
         qtdJogadores.setText("0/6");
+        qtdJogadores.setStyle("-fx-text-fill: red;");
     }
         
 
