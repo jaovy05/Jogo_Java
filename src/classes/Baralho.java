@@ -1,34 +1,32 @@
-package classes;
-
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Stack;
 
 public class Baralho {
-    private List<Carta> baralho;
+    private Stack<Carta> baralho;
 
     public Baralho() {
-        this.baralho = criaMonte();
-        embaralha();
+        this.baralho = new Stack<>();
+        criarBaralho();
+        embaralhar();
     }
 
-    private List<Carta> criaMonte() {
-        List<Carta> novoBaralho = new ArrayList<>();
+    private void criarBaralho() {
         for (int i = 1; i <= 109; i++) {
-            novoBaralho.add(new Carta(i));
+            baralho.push(new Carta(i));
         }
-        return novoBaralho;
     }
 
-    private void embaralha() {
+    public void comprar(LinkedList<Carta> maoJogador, int quantidade) { //chamar o método na classe Jogador
+        for (int i = 0; i < quantidade; i++) {
+            if (!baralho.isEmpty()) {
+                Carta carta = baralho.pop();
+                maoJogador.add(carta);
+            }
+        }
+    }
+
+    public void embaralhar() {
         Collections.shuffle(baralho);
-    }
-
-    public Carta comprar() throws Exception{
-        throw new Exception("Falta implementar o método");
-    }
-
-    public List<Carta> getBaralho() {
-        return baralho;
     }
 }
