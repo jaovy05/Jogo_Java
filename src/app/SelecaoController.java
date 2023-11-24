@@ -31,8 +31,12 @@ public class SelecaoController implements Initializable{
         imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
         imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
         imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
-
-        
+        nomes.add("");
+        nomes.add("");
+        nomes.add("");
+        nomes.add("");
+        nomes.add("");
+        nomes.add("");
     }
     
     @FXML
@@ -52,16 +56,14 @@ public class SelecaoController implements Initializable{
         IconP3.setImage(imagens.get(3));
         IconP4.setImage(imagens.get(4));
         IconP5.setImage(imagens.get(5));
-
         
-        if(nomes.size() != 0){
-            NomeP0.setText(nomes.get(0));
-            NomeP1.setText(nomes.get(1));
-            NomeP2.setText(nomes.get(2));
-            NomeP3.setText(nomes.get(3));
-            NomeP4.setText(nomes.get(4));
-            NomeP5.setText(nomes.get(5));
-        }
+        NomeP0.setText(nomes.get(0));
+        NomeP1.setText(nomes.get(1));
+        NomeP2.setText(nomes.get(2));
+        NomeP3.setText(nomes.get(3));
+        NomeP4.setText(nomes.get(4));
+        NomeP5.setText(nomes.get(5));
+        
               
         verificarJogadores(null);
     }
@@ -113,21 +115,13 @@ public class SelecaoController implements Initializable{
         if(NomeP4.getText() != "") jogadoresvalidos++;
         if(NomeP5.getText() != "") jogadoresvalidos++;
         
-        if(nomes.size() == 0){
-            nomes.add(NomeP0.getText());
-            nomes.add(NomeP1.getText());
-            nomes.add(NomeP2.getText());
-            nomes.add(NomeP3.getText());
-            nomes.add(NomeP4.getText());
-            nomes.add(NomeP5.getText());
-        } else {
-            nomes.set(0, NomeP0.getText());
-            nomes.set(1, NomeP1.getText());
-            nomes.set(2, NomeP2.getText());
-            nomes.set(3, NomeP3.getText());
-            nomes.set(4, NomeP4.getText());
-            nomes.set(5, NomeP5.getText());
-        }
+        nomes.set(0, NomeP0.getText());
+        nomes.set(1, NomeP1.getText());
+        nomes.set(2, NomeP2.getText());
+        nomes.set(3, NomeP3.getText());
+        nomes.set(4, NomeP4.getText());
+        nomes.set(5, NomeP5.getText());
+        
 
         qtdJogadores.setText(jogadoresvalidos + "/6");
         if(jogadoresvalidos < 3) qtdJogadores.setStyle("-fx-text-fill: red;");
