@@ -5,6 +5,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -67,6 +71,43 @@ public class SelecaoController implements Initializable{
               
         verificarJogadores(null);
     }
+    
+    @FXML
+    void verificarJogadores(KeyEvent event) {
+        jogadoresvalidos = 0;
+        if(NomeP0.getText() != "") jogadoresvalidos++;
+        if(NomeP1.getText() != "") jogadoresvalidos++;
+        if(NomeP2.getText() != "") jogadoresvalidos++;
+        if(NomeP3.getText() != "") jogadoresvalidos++;
+        if(NomeP4.getText() != "") jogadoresvalidos++;
+        if(NomeP5.getText() != "") jogadoresvalidos++;
+        
+        nomes.set(0, NomeP0.getText());
+        nomes.set(1, NomeP1.getText());
+        nomes.set(2, NomeP2.getText());
+        nomes.set(3, NomeP3.getText());
+        nomes.set(4, NomeP4.getText());
+        nomes.set(5, NomeP5.getText());
+        
+
+        qtdJogadores.setText(jogadoresvalidos + "/6");
+        if(jogadoresvalidos < 3) qtdJogadores.setStyle("-fx-text-fill: red;");
+        else qtdJogadores.setStyle("-fx-text-fill: blue;");
+    }
+
+     @FXML
+    void iniciarJogo(ActionEvent event) throws IOException {
+        if(jogadoresvalidos >= 3){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tabuleiroLayout.fxml"));
+            Parent root = fxmlLoader.load();
+            Scene tela = new Scene(root);
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(tela);
+            stage.show();
+        } else {
+            JOptionPane.showConfirmDialog(null,"É necessário pelo menos 3 jogadores", "Aleta", JOptionPane.WARNING_MESSAGE );
+        }
+    }
         
 
     @FXML
@@ -105,28 +146,7 @@ public class SelecaoController implements Initializable{
         abrirOpcoes(event);
     }
 
-    @FXML
-    void verificarJogadores(KeyEvent event) {
-        jogadoresvalidos = 0;
-        if(NomeP0.getText() != "") jogadoresvalidos++;
-        if(NomeP1.getText() != "") jogadoresvalidos++;
-        if(NomeP2.getText() != "") jogadoresvalidos++;
-        if(NomeP3.getText() != "") jogadoresvalidos++;
-        if(NomeP4.getText() != "") jogadoresvalidos++;
-        if(NomeP5.getText() != "") jogadoresvalidos++;
-        
-        nomes.set(0, NomeP0.getText());
-        nomes.set(1, NomeP1.getText());
-        nomes.set(2, NomeP2.getText());
-        nomes.set(3, NomeP3.getText());
-        nomes.set(4, NomeP4.getText());
-        nomes.set(5, NomeP5.getText());
-        
-
-        qtdJogadores.setText(jogadoresvalidos + "/6");
-        if(jogadoresvalidos < 3) qtdJogadores.setStyle("-fx-text-fill: red;");
-        else qtdJogadores.setStyle("-fx-text-fill: blue;");
-    }
+    
 
     void abrirOpcoes(MouseEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("opcoesLayout.fxml"));
