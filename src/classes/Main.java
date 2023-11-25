@@ -2,10 +2,9 @@ package classes;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Baralho baralho = new Baralho();
-        for(Carta c: baralho.getBaralho()){
-            System.out.println(c);
+        Tabuleiro tabuleiro = new Tabuleiro(3);
+        for(int i = 0; i < 12; i++){
+            tabuleiro.rodada();
         }
-
     }
 }

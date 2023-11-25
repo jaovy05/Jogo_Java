@@ -1,9 +1,13 @@
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Stack;
+package classes;
+
+import java.util.*;
 
 public class Baralho {
     private Stack<Carta> baralho;
+
+    public Stack<Carta> getBaralho() {
+        return baralho;
+    }
 
     public Baralho() {
         this.baralho = new Stack<>();
@@ -17,11 +21,15 @@ public class Baralho {
         }
     }
 
-    public void comprar(LinkedList<Carta> maoJogador, int quantidade) { //chamar o método na classe Jogador
+    public Carta comprar() { //chamar o método na classe Jogador
+        return baralho.pop();
+    }
+
+    public void comprar(List<Carta> maoMorta, int quantidade) { //chamar o método na classe Jogador
         for (int i = 0; i < quantidade; i++) {
             if (!baralho.isEmpty()) {
                 Carta carta = baralho.pop();
-                maoJogador.add(carta);
+                maoMorta.add(carta);
             }
         }
     }

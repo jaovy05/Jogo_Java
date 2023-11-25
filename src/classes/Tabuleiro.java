@@ -6,9 +6,10 @@ public class Tabuleiro {
     public Baralho baralho = new Baralho();
     public List<Jogador> jogadores = new ArrayList<>();
     public List<LinkedList<Carta>> tabuleiro;
+    Scanner sc = new Scanner(System.in);
 
     public Tabuleiro(int qtdJogadores){
-        Scanner sc = new Scanner(System.in);
+        
         
         //for para adicionar a quantidade de jogadores informada no parâmetro do construtor
         for(int i = 0; i < qtdJogadores; i++){ 
@@ -30,11 +31,12 @@ public class Tabuleiro {
         }
         //mostra a situação inicial do tabuleiro
         printTabuleiro();
-        sc.close();
+ 
     }
     
     public void printTabuleiro(){
         //Printar a situação do tabuleiro
+        System.out.println();
         for (int i = 0; i < 5; i++) {
             for(Carta c : tabuleiro.get(i)) System.out.print(c.toString());
             System.out.println();
@@ -54,6 +56,7 @@ public class Tabuleiro {
                 } catch(Exception e){
                     //diz para escolher a carta certo
                     System.out.println(e.getMessage());
+                    
                 }
             }
         } 
@@ -64,9 +67,10 @@ public class Tabuleiro {
             Integer indexAntecessor = antecessor(j.getCartaJogada());
             if(indexAntecessor == -1){
                 //se não tiver antecessor, compra a linha com maior elemento
-                j.comprarLinha(tabuleiro.get(posMaiorElemento()));
+                int posMaior = posMaiorElemento();          
+                j.comprarLinha(tabuleiro.get(posMaior));
                 //adiciona a carta na linha em questão
-                tabuleiro.get(posMaiorElemento()).addLast(j.getCartaJogada());
+                tabuleiro.get(posMaior).addLast(j.getCartaJogada());
             } else {
                 //se a linha tiver cheia, compra a mesma
                 if(tabuleiro.get(indexAntecessor).size() ==  5)
@@ -74,6 +78,7 @@ public class Tabuleiro {
                 //adiciona a carta na linha do antecessor
                 tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
             }
+            j.pontos();
         }
         //mostra a situação do tabuleiro
         printTabuleiro();
@@ -83,31 +88,41 @@ public class Tabuleiro {
 
     public void printJogadores(){
         //Printar a situação de cada jogador
+        System.out.println();
         for(Jogador j: jogadores){
             System.out.println("Jogador: " + j.getNome());
-            System.out.println("Pontos: " + j.pontos());
+            System.out.println("Pontos: " + j.getPontos());
         } 
     }
 
     public Carta escolherCarta(Jogador jogador) throws Exception{
-        Scanner sc = new Scanner(System.in);
+
         //chama o jogador pelo nome
         System.out.println("Escolha sua carta " + jogador.getNome() + ":");
         //printa a mão do jogador
         for(Carta c : jogador.getMaoJogador()) System.out.print(c);
-        Integer numero = sc.nextInt();
-        sc.close();
+        System.out.println();
 
-        for(Carta c : jogador.getMaoJogador()) 
+        try {
+            Integer numero = sc.nextInt();
+            for(Carta c : jogador.getMaoJogador()) 
             //verifica se o número informado está na mão
             if(c.getNumero() == numero) {
                 //se tiver, remove da mão e retorna a carta
                 jogador.getMaoJogador().remove(c);
                 return c;
             }
+        } catch (Exception e) {
+            sc.nextLine();
+            throw new Exception("Escolha uma carta válida");
+        }
+        
+        
+        
         //se não encontrar retorna exception
         throw new Exception("Escolha uma carta válida");
     }
+    
 
     public Integer antecessor(Carta cartaJogada){
         Integer antecessor = 0, pos = -1, ultimaCartadaLinha;
