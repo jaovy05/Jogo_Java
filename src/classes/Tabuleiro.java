@@ -153,4 +153,24 @@ public class Tabuleiro {
         }
         return pos;
     }
+
+    public void venceu(){
+        Jogador ganhou = jogadores.get(0);
+        for(Jogador j : jogadores) 
+            if(j.getPontos() < ganhou.getPontos())
+                ganhou = j;
+        
+        System.out.println("Campeão: " + ganhou.getNome());
+        for(Carta c : ganhou.getMaoMorta())
+            System.out.print(c);
+        System.out.println();
+        for(Jogador j : jogadores)
+            if(j != ganhou){
+                System.out.println("Nome: " + j.getNome());
+                for(Carta c : j.getMaoMorta())
+                    System.out.print(c);
+                System.out.println();
+            }
+        
+    }
 }

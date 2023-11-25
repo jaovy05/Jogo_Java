@@ -6,6 +6,7 @@ public class Jogador {
     private String nome;
     private List<Carta> maoJogador;
     private List<Carta> maoMorta ;
+
     private Carta cartaJogada;
     private int pontos;   
 
@@ -61,5 +62,9 @@ public class Jogador {
     
     public int getPontos() {
         return pontos;
+    } 
+    
+    public List<Carta> getMaoMorta() {
+        return maoMorta;
     }
 }

@@ -6,5 +6,7 @@ public class Main {
         for(int i = 0; i < 12; i++){
             tabuleiro.rodada();
         }
+
+        tabuleiro.venceu();
     }
 }
