@@ -25,6 +25,7 @@ import javafx.stage.Stage;
 
 public class SelecaoController implements Initializable{
     private int jogadoresvalidos = 0;
+
     private static List<String> nomes = new ArrayList<>();
     public static int index;
     public static List<Image> imagens = new ArrayList<>();
@@ -145,9 +146,7 @@ public class SelecaoController implements Initializable{
         index = 5;
         abrirOpcoes(event);
     }
-
     
-
     void abrirOpcoes(MouseEvent event) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("opcoesLayout.fxml"));
         Parent root = fxmlLoader.load();
@@ -156,5 +155,8 @@ public class SelecaoController implements Initializable{
         stage.setScene(tela);
         stage.show();
     }
- 
+
+    public static List<String> getNomes() {
+        return nomes;
+    }
 }
