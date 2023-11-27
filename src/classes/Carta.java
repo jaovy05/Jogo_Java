@@ -36,7 +36,7 @@ public class Carta {
     @Override
     //sobrescrita do método toString para facilitar o print
     public String toString(){
-        return numero + " ";
+        return "../img/" + numero + ".png";
     }
 
     //daqui para baixo contém somente os Getters e Setters
