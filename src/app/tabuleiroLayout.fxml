@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="784.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TabuleiroController">
    <children>
@@ -173,5 +179,32 @@
             </HBox>
          </children>
       </VBox>
+      <AnchorPane layoutX="719.0" layoutY="102.0" prefHeight="386.0" prefWidth="456.0" AnchorPane.rightAnchor="131.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="234.0">
+               <children>
+                  <Label layoutX="117.0" layoutY="50.0" prefHeight="22.0" prefWidth="117.0" text="Pontos:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="-17.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/IconVazio.png" />
+                     </image>
+                  </ImageView>
+                  <MenuBar layoutX="108.0" layoutY="25.0" prefHeight="25.0" prefWidth="126.0">
+                    <menus>
+                      <Menu fx:id="Nomejogador" mnemonicParsing="false" text="João Vitor Silva">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
