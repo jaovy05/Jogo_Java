@@ -2,21 +2,24 @@ package classes;
 
 import java.util.*;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+
 public class Tabuleiro {
     public Baralho baralho = new Baralho();
     public List<Jogador> jogadores = new ArrayList<>();
     public List<LinkedList<Carta>> tabuleiro;
     Scanner sc = new Scanner(System.in);
 
-    public Tabuleiro(int qtdJogadores){
+    public Tabuleiro(List<String> nomes, VBox tabuleiroVBox){
         
         
-        //for para adicionar a quantidade de jogadores informada no parâmetro do construtor
-        for(int i = 0; i < qtdJogadores; i++){ 
-            System.out.println("Digite seu nome: ");
-            String nome = sc.nextLine();
+        //for para adicionar os jogadores informados no parâmetro do construtor
+        for(String nome : nomes)
             jogadores.add(new Jogador(nome, baralho));
-        }
+        
         //Arraylist para as linhas
         tabuleiro = new ArrayList<>(5);
         //usa deck para colunas
@@ -30,15 +33,22 @@ public class Tabuleiro {
             }
         }
         //mostra a situação inicial do tabuleiro
-        printTabuleiro();
+        printTabuleiro(tabuleiroVBox);
  
     }
     
-    public void printTabuleiro(){
+    public void printTabuleiro(VBox tabuleiroVBox){
         //Printar a situação do tabuleiro
         System.out.println();
-        for (int i = 0; i < 5; i++) {
-            for(Carta c : tabuleiro.get(i)) System.out.print(c.toString());
+        for (int l = 0; l < 5; l++) {
+            for(int c = 0; c < tabuleiro.get(l).size(); c++) {
+                Image image = new Image(getClass().getResourceAsStream(tabuleiro.get(l).get(c).toString()));
+                HBox linha = (HBox) tabuleiroVBox.getChildren().get(l);
+                ImageView imageView = (ImageView) linha.getChildren().get(c);
+                imageView.setImage(image);
+
+                System.out.print(tabuleiro.get(l).get(c));
+            }
             System.out.println();
         }
     }
