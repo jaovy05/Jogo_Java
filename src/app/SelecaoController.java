@@ -26,7 +26,7 @@ import javafx.stage.Stage;
 public class SelecaoController implements Initializable{
     private int jogadoresvalidos = 0;
 
-    private static List<String> nomes = new ArrayList<>();
+    public static List<String> nomes = new ArrayList<>();
     public static int index;
     public static List<Image> imagens = new ArrayList<>();
     static{
@@ -156,7 +156,4 @@ public class SelecaoController implements Initializable{
         stage.show();
     }
 
-    public static List<String> getNomes() {
-        return nomes;
-    }
 }

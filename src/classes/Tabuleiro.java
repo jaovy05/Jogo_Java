@@ -2,10 +2,13 @@ package classes;
 
 import java.util.*;
 
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class Tabuleiro {
@@ -14,12 +17,12 @@ public class Tabuleiro {
     public List<LinkedList<Carta>> tabuleiro;
     Scanner sc = new Scanner(System.in);
 
-    public Tabuleiro(List<String> nomes, VBox tabuleiroVBox){
+    public Tabuleiro(List<String> nomes, VBox tabuleiroVBox, List<Image> fotos){
         
         
         //for para adicionar os jogadores informados no parâmetro do construtor
-        for(String nome : nomes)
-            if(nome != "") jogadores.add(new Jogador(nome, baralho));
+        for(int i = 0; i < 6; i++)
+            if(nomes.get(i) != "") jogadores.add(new Jogador(nomes.get(i), baralho, fotos.get(i)));
         
         //Arraylist para as linhas
         tabuleiro = new ArrayList<>(5);
@@ -55,10 +58,12 @@ public class Tabuleiro {
         }
     }
 
-    public void rodada(VBox tabuleiroVBox, AnchorPane mao){
+    public void rodada(VBox tabuleiroVBox, AnchorPane mao, Pane perfil){
         //pega a carta de todos jogadores
         
         for(Jogador j : jogadores){
+            mostrarMao(j, mao);
+            printJogador(j, perfil);
             j.setCartaJogada((escolherCarta(j, mao)));
         } 
         //ordena os jogodares ordem crescente
@@ -96,13 +101,15 @@ public class Tabuleiro {
         } 
     }
 
-     public void printJogador(Jogador jogador){
-        //Printar a situação de cada jogador
-        System.out.println();
-        for(Jogador j: jogadores){
-            System.out.println("Jogador: " + j.getNome());
-            System.out.println("Pontos: " + j.getPontos());
-        } 
+     public void printJogador(Jogador jogador, Pane perfil){
+        //Printar a situação do jogador
+        ImageView imageView = (ImageView) perfil.getChildren().get(0);
+        MenuBar nome = (MenuBar) perfil.getChildren().get(1);
+        Label pontos = (Label) perfil.getChildren().get(2);
+
+        imageView.setImage(jogador.getFoto());
+        nome.getMenus().get(0).setText(jogador.getNome());
+        pontos.setText("Pontos : " + jogador.getPontos());
     }
 
     public Carta escolherCarta(Jogador jogador, AnchorPane mao){

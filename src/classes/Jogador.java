@@ -1,35 +1,29 @@
 package classes;
 
 import java.util.*;
+import javafx.scene.image.Image;
 
 public class Jogador {
     private String nome;
     private List<Carta> maoJogador;
-    private List<Carta> maoMorta ;
-
+    private List<Carta> maoMorta;
     private Carta cartaJogada;
     private int pontos;   
-
-    public Jogador(String nome, Baralho baralho) {
+    private Image foto;
+    
+    public Jogador(String nome, Baralho baralho, Image foto) {
         this.nome = nome;
         this.maoJogador = new ArrayList<>();
         this.maoMorta= new ArrayList<>();
         this.pontos = 0;
+        this.foto = foto;
 
         baralho.comprar(maoJogador, 12);
     }
 
-    /*public void mostrarCarta() {
-        System.out.println("Mão do jogador " + nome + ":");
-        for (Carta carta : maoJogador) {
-            System.out.println("Carta: " + carta.getNumero());
-        }
-    }*/
-
-    public void comprarLinha(LinkedList<Carta> linha) { //implementar esse método Valéria
+    public void comprarLinha(LinkedList<Carta> linha) { 
         while (!linha.isEmpty()) 
-            maoMorta.add(linha.removeLast());
-        
+            maoMorta.add(linha.removeLast());        
     }
 
     public void pontos() { //usar a maoMorta do jogador para calcular os pontos
@@ -66,5 +60,9 @@ public class Jogador {
     
     public List<Carta> getMaoMorta() {
         return maoMorta;
+    }
+    
+    public Image getFoto() {
+        return foto;
     }
 }
