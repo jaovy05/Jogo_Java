@@ -4,6 +4,7 @@ import java.util.*;
 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -18,7 +19,7 @@ public class Tabuleiro {
         
         //for para adicionar os jogadores informados no parâmetro do construtor
         for(String nome : nomes)
-            jogadores.add(new Jogador(nome, baralho));
+            if(nome != "") jogadores.add(new Jogador(nome, baralho));
         
         //Arraylist para as linhas
         tabuleiro = new ArrayList<>(5);
@@ -39,11 +40,12 @@ public class Tabuleiro {
     
     public void printTabuleiro(VBox tabuleiroVBox){
         //Printar a situação do tabuleiro
+        
         System.out.println();
         for (int l = 0; l < 5; l++) {
+            HBox linha = (HBox) tabuleiroVBox.getChildren().get(l);
             for(int c = 0; c < tabuleiro.get(l).size(); c++) {
                 Image image = new Image(getClass().getResourceAsStream(tabuleiro.get(l).get(c).toString()));
-                HBox linha = (HBox) tabuleiroVBox.getChildren().get(l);
                 ImageView imageView = (ImageView) linha.getChildren().get(c);
                 imageView.setImage(image);
 
@@ -53,22 +55,11 @@ public class Tabuleiro {
         }
     }
 
-    public void rodada(){
+    public void rodada(VBox tabuleiroVBox, AnchorPane mao){
         //pega a carta de todos jogadores
+        
         for(Jogador j : jogadores){
-            boolean naoEscolheu = true;
-            //enquanto não escolher o loop continua
-            while (naoEscolheu){
-                try {
-                    //adiciona a carta jogada ao jogador
-                    j.setCartaJogada((escolherCarta(j)));
-                    naoEscolheu = false;
-                } catch(Exception e){
-                    //diz para escolher a carta certo
-                    System.out.println(e.getMessage());
-                    
-                }
-            }
+            j.setCartaJogada((escolherCarta(j, mao)));
         } 
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
@@ -91,7 +82,7 @@ public class Tabuleiro {
             j.pontos();
         }
         //mostra a situação do tabuleiro
-        printTabuleiro();
+        printTabuleiro(tabuleiroVBox);
         //e dos jogadores
         printJogadores();
     }
@@ -105,12 +96,25 @@ public class Tabuleiro {
         } 
     }
 
-    public Carta escolherCarta(Jogador jogador) throws Exception{
+     public void printJogador(Jogador jogador){
+        //Printar a situação de cada jogador
+        System.out.println();
+        for(Jogador j: jogadores){
+            System.out.println("Jogador: " + j.getNome());
+            System.out.println("Pontos: " + j.getPontos());
+        } 
+    }
+
+    public Carta escolherCarta(Jogador jogador, AnchorPane mao){
 
         //chama o jogador pelo nome
         System.out.println("Escolha sua carta " + jogador.getNome() + ":");
         //printa a mão do jogador
-        for(Carta c : jogador.getMaoJogador()) System.out.print(c);
+        for(int i = 0; i < jogador.getMaoJogador().size(); i++) {
+            Image image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
+            ImageView imageView = (ImageView) mao.getChildren().get(0);
+            imageView.setImage(image);
+        }
         System.out.println();
 
         try {
@@ -124,13 +128,10 @@ public class Tabuleiro {
             }
         } catch (Exception e) {
             sc.nextLine();
-            throw new Exception("Escolha uma carta válida");
+            throw new RuntimeException("Escolha uma carta válida");
         }
-        
-        
-        
         //se não encontrar retorna exception
-        throw new Exception("Escolha uma carta válida");
+        throw new RuntimeException("Escolha uma carta válida");
     }
     
 
@@ -182,5 +183,13 @@ public class Tabuleiro {
                 System.out.println();
             }
         
+    }
+
+    public void mostrarMao(Jogador jogador, AnchorPane mao){
+        for(int i = 0; i < jogador.getMaoJogador().size(); i++) {
+            Image image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
+            ImageView imageView = (ImageView) mao.getChildren().get(i);
+            imageView.setImage(image);
+        }
     }
 }
