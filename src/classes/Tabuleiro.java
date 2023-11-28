@@ -12,9 +12,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 public class Tabuleiro {
-    public Baralho baralho = new Baralho();
-    public List<Jogador> jogadores = new ArrayList<>();
-    public List<LinkedList<Carta>> tabuleiro;
+    private Baralho baralho = new Baralho();
+    private List<Jogador> jogadores = new ArrayList<>();
+    private List<LinkedList<Carta>> tabuleiro;
     Scanner sc = new Scanner(System.in);
 
     public Tabuleiro(List<String> nomes, VBox tabuleiroVBox, List<Image> fotos){
@@ -61,11 +61,11 @@ public class Tabuleiro {
     public void rodada(VBox tabuleiroVBox, AnchorPane mao, Pane perfil){
         //pega a carta de todos jogadores
         
-        for(Jogador j : jogadores){
+      /*   for(Jogador j : jogadores){
             mostrarMao(j, mao);
             printJogador(j, perfil);
             j.setCartaJogada((escolherCarta(j, mao)));
-        } 
+        } */
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
         for(Jogador j : jogadores){
@@ -128,11 +128,11 @@ public class Tabuleiro {
             Integer numero = sc.nextInt();
             for(Carta c : jogador.getMaoJogador()) 
             //verifica se o número informado está na mão
-            if(c.getNumero() == numero) {
-                //se tiver, remove da mão e retorna a carta
-                jogador.getMaoJogador().remove(c);
-                return c;
-            }
+                if(c.getNumero() == numero) {
+                    //se tiver, remove da mão e retorna a carta
+                    jogador.getMaoJogador().remove(c);
+                    return c;
+                }
         } catch (Exception e) {
             sc.nextLine();
             throw new RuntimeException("Escolha uma carta válida");
@@ -193,10 +193,23 @@ public class Tabuleiro {
     }
 
     public void mostrarMao(Jogador jogador, AnchorPane mao){
-        for(int i = 0; i < jogador.getMaoJogador().size(); i++) {
-            Image image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
+        
+        for(int i = 0; i < 12; i++) { 
+            
             ImageView imageView = (ImageView) mao.getChildren().get(i);
+            Image image;
+            if(i < jogador.getMaoJogador().size()){
+                image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
+                System.out.print(jogador.getMaoJogador().get(i) + " ");
+            } else {
+                image = new Image(getClass().getResourceAsStream("../img/verso.png"));
+            }
             imageView.setImage(image);
         }
+        System.out.println();
+    }
+    
+    public List<Jogador> getJogadores() {
+        return jogadores;
     }
 }

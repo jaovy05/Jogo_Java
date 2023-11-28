@@ -2,9 +2,9 @@ package app;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import classes.Jogador;
 import classes.Tabuleiro;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,11 +13,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.Node;
 
 
 public class TabuleiroController implements Initializable {
-
+    public static int indexJogador = 0;
+    public static int indexCarta = -1;
     private Tabuleiro tabuleiro;
 
     @FXML
@@ -29,39 +29,75 @@ public class TabuleiroController implements Initializable {
     @FXML
     private Pane perfil;
 
+    @FXML
+    private ImageView c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabuleiro = new Tabuleiro(SelecaoController.nomes, tabuleiroEsqueleto, SelecaoController.imagens);
-        tabuleiro.mostrarMao(tabuleiro.jogadores.get(0), mao);
-        tabuleiro.printJogador(tabuleiro.jogadores.get(0), perfil);
+        tabuleiro.mostrarMao(tabuleiro.getJogadores().get(indexJogador), mao);
+        tabuleiro.printJogador(tabuleiro.getJogadores().get(indexJogador), perfil);
     }
 
     @FXML
     void JogarRodada(ActionEvent event) {
         //tabuleiro.rodada(tabuleiroEsqueleto, mao);
-        Jogador jogador = tabuleiro.jogadores.get(0);
         
+        tabuleiro.rodada(tabuleiroEsqueleto, mao, perfil);
     }
     
     @FXML
-    void destacar(MouseEvent event) {
-        ImageView cartaSelecionada = (ImageView) event.getSource();
-        ajusteTamanho(cartaSelecionada, 135, 93, -10);
-        cartaSelecionada.toFront();
+    void cartaJogada(MouseEvent event) {
+        if(indexJogador < tabuleiro.getJogadores().size()){ 
+            Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
+            jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
+            System.out.println(jogador.getCartaJogada());
+            if(indexJogador + 1 == tabuleiro.getJogadores().size()){
+                tabuleiro.rodada(tabuleiroEsqueleto, mao, perfil);
+                indexJogador = 0;
+            } else {
+                indexJogador++;
+            }
+            tabuleiro.mostrarMao(tabuleiro.getJogadores().get(indexJogador), mao);
+            tabuleiro.printJogador(tabuleiro.getJogadores().get(indexJogador), perfil);
+        }
+    }
+    
+    @FXML
+    void destacar(MouseEvent event) { 
+        ImageView carta = (ImageView) event.getSource();
+        indexCarta = mao.getChildren().indexOf(carta);
+        ajusteTamanho(carta, 135, 93, -10);
+        carta.toFront(); 
+        System.out.println(indexCarta);
+        
     }
 
     @FXML
     void ocultar(MouseEvent event) {
-        ImageView cartaSelecionada = (ImageView) event.getSource();
-
-        ajusteTamanho(cartaSelecionada, 120, 83, 0);
-        // Itera sobre os filhos do contêiner
-        cartaSelecionada.toBack();
+        ImageView carta = (ImageView) event.getSource();
+        ajusteTamanho(carta, 120, 83, 0);
+        organizar();
     }
 
     private void ajusteTamanho(ImageView carta, double altura, double largura, double y){
         carta.setFitHeight(altura);
         carta.setFitWidth(largura);
         AnchorPane.setTopAnchor(carta, y);
+    }
+
+    private void organizar(){
+        c0.toFront();
+        c1.toFront();
+        c2.toFront();
+        c3.toFront();
+        c4.toFront();
+        c5.toFront();
+        c6.toFront();
+        c7.toFront();
+        c8.toFront();
+        c9.toFront();
+        c10.toFront();
+        c11.toFront();
     }
 }

@@ -207,62 +207,62 @@
             </Pane>
             <AnchorPane fx:id="mao" layoutY="127.0" prefHeight="131.0" prefWidth="623.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutY="5.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c0" fitHeight="120.0" fitWidth="83.0" layoutY="5.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="50.0" layoutY="-4.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c1" fitHeight="120.0" fitWidth="83.0" layoutX="50.0" layoutY="-4.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="100.0" layoutY="6.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c2" fitHeight="120.0" fitWidth="83.0" layoutX="100.0" layoutY="6.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="150.0" layoutY="6.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c3" fitHeight="120.0" fitWidth="83.0" layoutX="150.0" layoutY="6.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="200.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c4" fitHeight="120.0" fitWidth="83.0" layoutX="200.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="250.0" layoutY="6.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c5" fitHeight="120.0" fitWidth="83.0" layoutX="250.0" layoutY="6.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="300.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c6" fitHeight="120.0" fitWidth="83.0" layoutX="300.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="350.0" layoutY="-2.0" onMouseEntered="#destacar"  onMouseExited="#ocultar"  pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c7" fitHeight="120.0" fitWidth="83.0" layoutX="350.0" layoutY="-2.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="400.0" layoutY="-2.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c8" fitHeight="120.0" fitWidth="83.0" layoutX="400.0" layoutY="-2.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="450.0" layoutY="23.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c9" fitHeight="120.0" fitWidth="83.0" layoutX="450.0" layoutY="23.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="500.0" layoutY="6.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c10" fitHeight="120.0" fitWidth="83.0" layoutX="500.0" layoutY="6.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="550.0" layoutY="16.0" onMouseEntered="#destacar"  onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <ImageView fx:id="c11" fitHeight="120.0" fitWidth="83.0" layoutX="550.0" layoutY="16.0" onMouseClicked="#cartaJogada" onMouseEntered="#destacar" onMouseExited="#ocultar" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                      <image>
                         <Image url="@../img/verso.png" />
                      </image>

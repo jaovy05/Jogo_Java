@@ -51,6 +51,11 @@ public class Jogador {
     }
 
     public void setCartaJogada(Carta cartaJogada) {
+       // for(Carta c : maoJogador)
+          //  if(c.getNumero() == cartaJogada.getNumero()) {
+             //   maoJogador.remove(c);
+           // }
+        maoJogador.remove(cartaJogada);
         this.cartaJogada = cartaJogada;
     }
     
