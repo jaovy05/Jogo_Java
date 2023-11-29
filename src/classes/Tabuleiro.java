@@ -62,16 +62,17 @@ public class Tabuleiro {
         }
     }
 
-    public void rodada(VBox tabuleiroVBox, AnchorPane mao, Pane perfil){
-        //pega a carta de todos jogadores
-        
-      /*   for(Jogador j : jogadores){
-            mostrarMao(j, mao);
-            printJogador(j, perfil);
-            j.setCartaJogada((escolherCarta(j, mao)));
-        } */
+    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJodadas){
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
+        for(int i = 0; i < jogadores.size(); i++){
+            ImageView cartaJogada = (ImageView) cartasJodadas.getChildren().get(i);
+            Label nome = (Label) cartasJodadas.getChildren().get(i + 6);
+            Jogador jogador = jogadores.get(i);
+            cartaJogada.setImage(new Image(getClass().getResourceAsStream(jogador.getCartaJogada().toString())));
+            nome.setText(jogador.getNome());
+        }
+        
         for(Jogador j : jogadores){
             //pega o índice do antecessor mais próxima
             Integer indexAntecessor = antecessor(j.getCartaJogada());

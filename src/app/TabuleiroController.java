@@ -8,6 +8,7 @@ import classes.Tabuleiro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -24,26 +25,23 @@ public class TabuleiroController implements Initializable {
     private VBox tabuleiroEsqueleto;
 
     @FXML
-    private AnchorPane mao;
+    private AnchorPane mao, cartasJogadas;
 
     @FXML
     private Pane perfil;
 
     @FXML
-    private ImageView c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11;
+    private ImageView c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, cartaJogador0, cartaJogador1, cartaJogador2, cartaJogador3,
+            cartaJogador4, cartaJogador5;
+
+    @FXML
+    private Label nomeJogador0, nomeJogador1, nomeJogador2, nomeJogador3, nomeJogador4, nomeJogador5;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tabuleiro = new Tabuleiro(SelecaoController.nomes, tabuleiroEsqueleto, SelecaoController.imagens);
         tabuleiro.mostrarMao(tabuleiro.getJogadores().get(indexJogador), mao);
         tabuleiro.printJogador(tabuleiro.getJogadores().get(indexJogador), perfil);
-    }
-
-    @FXML
-    void JogarRodada(ActionEvent event) {
-        //tabuleiro.rodada(tabuleiroEsqueleto, mao);
-        
-        tabuleiro.rodada(tabuleiroEsqueleto, mao, perfil);
     }
     
     @FXML
@@ -53,11 +51,12 @@ public class TabuleiroController implements Initializable {
             jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
             System.out.println(jogador.getCartaJogada());
             if(indexJogador + 1 == tabuleiro.getJogadores().size()){
-                tabuleiro.rodada(tabuleiroEsqueleto, mao, perfil);
+                tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas);
                 indexJogador = 0;
             } else {
                 indexJogador++;
             }
+            organizar();
             tabuleiro.mostrarMao(tabuleiro.getJogadores().get(indexJogador), mao);
             tabuleiro.printJogador(tabuleiro.getJogadores().get(indexJogador), perfil);
         }
@@ -69,8 +68,7 @@ public class TabuleiroController implements Initializable {
         indexCarta = mao.getChildren().indexOf(carta);
         ajusteTamanho(carta, 135, 93, -10);
         carta.toFront(); 
-        System.out.println(indexCarta);
-        
+        System.out.println(indexCarta);   
     }
 
     @FXML
@@ -84,6 +82,14 @@ public class TabuleiroController implements Initializable {
         carta.setFitHeight(altura);
         carta.setFitWidth(largura);
         AnchorPane.setTopAnchor(carta, y);
+    }
+
+    @FXML
+    void testando(ActionEvent event) {
+        ImageView imageView = (ImageView) cartasJogadas.getChildren().get(2);
+        Label nome = (Label) cartasJogadas.getChildren().get(8);
+        nome.setText("Joao");
+        imageView.setImage(c2.getImage());
     }
 
     private void organizar(){

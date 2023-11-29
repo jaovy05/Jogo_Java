@@ -10,7 +10,7 @@ public class App extends Application{
     
     @Override
     public void start(Stage primaryStage) throws Exception { 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuLayout.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("selecaoLayout.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
         primaryStage.setScene(tela);
