@@ -47,14 +47,18 @@ public class Tabuleiro {
         System.out.println();
         for (int l = 0; l < 5; l++) {
             HBox linha = (HBox) tabuleiroVBox.getChildren().get(l);
-            for(int c = 0; c < tabuleiro.get(l).size(); c++) {
-                Image image = new Image(getClass().getResourceAsStream(tabuleiro.get(l).get(c).toString()));
+            for(int c = 0; c < 5; c++) {
                 ImageView imageView = (ImageView) linha.getChildren().get(c);
+                Image image;
+                if(c < tabuleiro.get(l).size()){
+                    image = new Image(getClass().getResourceAsStream(tabuleiro.get(l).get(c).toString()));
+                   // System.out.print(tabuleiro.get(l).get(c));
+                } else {
+                    image = new Image(getClass().getResourceAsStream("../img/CasaTabuleiro.png"));
+                }
                 imageView.setImage(image);
-
-                System.out.print(tabuleiro.get(l).get(c));
             }
-            System.out.println();
+           // System.out.println();
         }
     }
 
