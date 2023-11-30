@@ -1,7 +1,10 @@
 package classes;
 
 import java.util.*;
-
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
@@ -10,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 public class Tabuleiro {
     private Baralho baralho = new Baralho();
@@ -43,8 +47,6 @@ public class Tabuleiro {
     
     public void printTabuleiro(VBox tabuleiroVBox){
         //Printar a situação do tabuleiro
-        
-        System.out.println();
         for (int l = 0; l < 5; l++) {
             HBox linha = (HBox) tabuleiroVBox.getChildren().get(l);
             for(int c = 0; c < 5; c++) {
@@ -52,17 +54,16 @@ public class Tabuleiro {
                 Image image;
                 if(c < tabuleiro.get(l).size()){
                     image = new Image(getClass().getResourceAsStream(tabuleiro.get(l).get(c).toString()));
-                   // System.out.print(tabuleiro.get(l).get(c));
+
                 } else {
                     image = new Image(getClass().getResourceAsStream("../img/CasaTabuleiro.png"));
                 }
                 imageView.setImage(image);
             }
-           // System.out.println();
         }
     }
 
-    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJodadas){
+    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJodadas)  {
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
         for(int i = 0; i < jogadores.size(); i++){
@@ -72,42 +73,35 @@ public class Tabuleiro {
             cartaJogada.setImage(new Image(getClass().getResourceAsStream(jogador.getCartaJogada().toString())));
             nome.setText(jogador.getNome());
         }
+        Timeline timeline = new Timeline();
         
-        for(Jogador j : jogadores){
-            //pega o índice do antecessor mais próxima
+        for (int i = 0; i < jogadores.size(); i++) {
+            Jogador j = jogadores.get(i);
             Integer indexAntecessor = antecessor(j.getCartaJogada());
-            if(indexAntecessor == -1){
-                //se não tiver antecessor, compra a linha com maior elemento
-                int posMaior = posMaiorElemento();          
-                j.comprarLinha(tabuleiro.get(posMaior));
-                //adiciona a carta na linha em questão
-                tabuleiro.get(posMaior).addLast(j.getCartaJogada());
-            } else {
-                //se a linha tiver cheia, compra a mesma
-                if(tabuleiro.get(indexAntecessor).size() ==  5)
-                    j.comprarLinha(tabuleiro.get(indexAntecessor));
-                //adiciona a carta na linha do antecessor
-                tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
-            }
-            j.pontos();
+    
+            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent event) {
+                    if (indexAntecessor == -1) {
+                        int posMaior = posMaiorElemento();
+                        j.comprarLinha(tabuleiro.get(posMaior));
+                        tabuleiro.get(posMaior).addLast(j.getCartaJogada());
+                    } else {
+                        if (tabuleiro.get(indexAntecessor).size() == 5) {
+                            j.comprarLinha(tabuleiro.get(indexAntecessor));
+                        }
+                        tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
+                    }
+                    j.pontos();
+                    printTabuleiro(tabuleiroVBox);
+                }
+            });
+            timeline.getKeyFrames().add(keyFrame);
         }
-        //mostra a situação do tabuleiro
-        printTabuleiro(tabuleiroVBox);
-        //e dos jogadores
-        printJogadores();
+        timeline.play();
     }
 
-    public void printJogadores(){
-        //Printar a situação de cada jogador
-        System.out.println();
-        for(Jogador j: jogadores){
-            System.out.println("Jogador: " + j.getNome());
-            System.out.println("Pontos: " + j.getPontos());
-        } 
-    }
-
-     public void printJogador(Jogador jogador, Pane perfil){
-        //Printar a situação do jogador
+    public void printJogador(Jogador jogador, Pane perfil){
         ImageView imageView = (ImageView) perfil.getChildren().get(0);
         MenuBar nome = (MenuBar) perfil.getChildren().get(1);
         Label pontos = (Label) perfil.getChildren().get(2);
@@ -118,10 +112,6 @@ public class Tabuleiro {
     }
 
     public Carta escolherCarta(Jogador jogador, AnchorPane mao){
-
-        //chama o jogador pelo nome
-        System.out.println("Escolha sua carta " + jogador.getNome() + ":");
-        //printa a mão do jogador
         for(int i = 0; i < jogador.getMaoJogador().size(); i++) {
             Image image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
             ImageView imageView = (ImageView) mao.getChildren().get(0);
@@ -139,7 +129,6 @@ public class Tabuleiro {
                     return c;
                 }
         } catch (Exception e) {
-            sc.nextLine();
             throw new RuntimeException("Escolha uma carta válida");
         }
         //se não encontrar retorna exception
@@ -200,18 +189,15 @@ public class Tabuleiro {
     public void mostrarMao(Jogador jogador, AnchorPane mao){
         
         for(int i = 0; i < 12; i++) { 
-            
             ImageView imageView = (ImageView) mao.getChildren().get(i);
             Image image;
             if(i < jogador.getMaoJogador().size()){
                 image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
-                System.out.print(jogador.getMaoJogador().get(i) + " ");
             } else {
                 image = new Image(getClass().getResourceAsStream("../img/verso.png"));
             }
             imageView.setImage(image);
         }
-        System.out.println();
     }
     
     public List<Jogador> getJogadores() {

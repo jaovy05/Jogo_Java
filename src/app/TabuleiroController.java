@@ -2,13 +2,10 @@ package app;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import classes.Jogador;
 import classes.Tabuleiro;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -31,11 +28,7 @@ public class TabuleiroController implements Initializable {
     private Pane perfil;
 
     @FXML
-    private ImageView c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, cartaJogador0, cartaJogador1, cartaJogador2, cartaJogador3,
-            cartaJogador4, cartaJogador5;
-
-    @FXML
-    private Label nomeJogador0, nomeJogador1, nomeJogador2, nomeJogador3, nomeJogador4, nomeJogador5;
+    private ImageView c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,11 +38,10 @@ public class TabuleiroController implements Initializable {
     }
     
     @FXML
-    void cartaJogada(MouseEvent event) {
+    void cartaJogada(MouseEvent event)   {
         if(indexJogador < tabuleiro.getJogadores().size()){ 
             Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
             jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
-            System.out.println(jogador.getCartaJogada());
             if(indexJogador + 1 == tabuleiro.getJogadores().size()){
                 tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas);
                 indexJogador = 0;
@@ -68,7 +60,6 @@ public class TabuleiroController implements Initializable {
         indexCarta = mao.getChildren().indexOf(carta);
         ajusteTamanho(carta, 135, 93, -10);
         carta.toFront(); 
-        System.out.println(indexCarta);   
     }
 
     @FXML
@@ -82,14 +73,6 @@ public class TabuleiroController implements Initializable {
         carta.setFitHeight(altura);
         carta.setFitWidth(largura);
         AnchorPane.setTopAnchor(carta, y);
-    }
-
-    @FXML
-    void testando(ActionEvent event) {
-        ImageView imageView = (ImageView) cartasJogadas.getChildren().get(2);
-        Label nome = (Label) cartasJogadas.getChildren().get(8);
-        nome.setText("Joao");
-        imageView.setImage(c2.getImage());
     }
 
     private void organizar(){

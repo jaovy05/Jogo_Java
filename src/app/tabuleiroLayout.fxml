@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -273,20 +272,19 @@
       </AnchorPane>
       <AnchorPane fx:id="cartasJogadas" layoutX="665.0" layoutY="338.0" prefHeight="200.0" prefWidth="643.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <ImageView fx:id="cartaJogador0" fitHeight="120.0" fitWidth="83.0" layoutX="32.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="cartaJogador1" fitHeight="120.0" fitWidth="83.0" layoutX="132.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="cartaJogador2" fitHeight="120.0" fitWidth="83.0" layoutX="232.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="cartaJogador3" fitHeight="120.0" fitWidth="83.0" layoutX="332.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="cartaJogador4" fitHeight="120.0" fitWidth="83.0" layoutX="432.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="cartaJogador5" fitHeight="120.0" fitWidth="83.0" layoutX="532.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="nomeJogador0" layoutX="32.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
-            <Label fx:id="nomeJogador1" layoutX="132.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
-            <Label fx:id="nomeJogador2" layoutX="232.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
-            <Label fx:id="nomeJogador3" layoutX="332.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
-            <Label fx:id="nomeJogador4" layoutX="432.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
-            <Label fx:id="nomeJogador5" layoutX="532.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
+            <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="32.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="132.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="232.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="332.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="432.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="120.0" fitWidth="83.0" layoutX="532.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="32.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
+            <Label layoutX="132.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
+            <Label layoutX="232.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
+            <Label layoutX="332.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
+            <Label layoutX="432.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
+            <Label layoutX="532.0" layoutY="27.0" prefHeight="22.0" prefWidth="83.0" textAlignment="CENTER" />
          </children>
       </AnchorPane>
-      <Button layoutX="901.0" layoutY="580.0" mnemonicParsing="false" onAction="#testando" text="teste" />
    </children>
 </AnchorPane>
