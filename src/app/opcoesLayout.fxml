@@ -4,92 +4,116 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.OpcoesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="621.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.OpcoesController">
    <children>
-      <ImageView fx:id="op7" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="275.0" onMouseClicked="#escolheu7" pickOnBounds="false" preserveRatio="true" AnchorPane.topAnchor="313.0">
-         <image>
-            <Image url="@../img/Icon7.png" />
-         </image></ImageView>
-      <ImageView fx:id="op3" fitHeight="150.0" fitWidth="200.0" layoutX="13.0" layoutY="-14.0" onMouseClicked="#escolheu3" pickOnBounds="false" preserveRatio="true" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="-14.0">
-         <image>
-            <Image url="@../img/Icon3.png" />
-         </image></ImageView>
-      <ImageView fx:id="op4" fitHeight="150.0" fitWidth="200.0" layoutX="311.0" layoutY="-17.0" onMouseClicked="#escolheu4" pickOnBounds="false" preserveRatio="true" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="-17.0">
-         <image>
-            <Image url="@../img/Icon4.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op2" fitHeight="150.0" fitWidth="200.0" layoutX="451.0" layoutY="-17.0" onMouseClicked="#escolheu2" pickOnBounds="false" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="-17.0">
-         <image>
-            <Image url="@../img/Icon2.png" />
-         </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-      </ImageView>
-      <ImageView fx:id="op9" fitHeight="150.0" fitWidth="200.0" layoutX="311.0" layoutY="81.0" onMouseClicked="#escolheu9" pickOnBounds="false" preserveRatio="true" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="95.0">
-         <image>
-            <Image url="@../img/Icon9.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op1" fitHeight="150.0" fitWidth="174.0" layoutX="164.0" layoutY="-17.0" onMouseClicked="#escolheu1" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="-17.0">
-         <image>
-            <Image url="@../img/Icon1.png" />
-         </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-      </ImageView>
-      <ImageView fx:id="op8" fitHeight="150.0" fitWidth="200.0" layoutX="164.0" layoutY="81.0" onMouseClicked="#escolheu8" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="95.0">
-         <image>
-            <Image url="@../img/Icon8.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op5" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="81.0" onMouseClicked="#escolheu5" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="95.0">
-         <image>
-            <Image url="@../img/Icon5.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op6" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="178.0" onMouseClicked="#escolheu6" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="204.0">
-         <image>
-            <Image url="@../img/Icon6.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op10" fitHeight="150.0" fitWidth="200.0" layoutX="451.0" layoutY="81.0" onMouseClicked="#escolheu10" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="95.0">
-         <image>
-            <Image url="@../img/Icon10.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op12" fitHeight="150.0" fitWidth="200.0" layoutX="314.0" layoutY="202.0" onMouseClicked="#escolheu12" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="157.0" AnchorPane.topAnchor="202.0">
-         <image>
-            <Image url="@../img/Icon12.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op13" fitHeight="150.0" fitWidth="200.0" layoutX="455.0" layoutY="170.0" onMouseClicked="#escolheu13" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="204.0">
-         <image>
-            <Image url="@../img/Icon13.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op11" fitHeight="150.0" fitWidth="200.0" layoutX="162.0" layoutY="207.0" onMouseClicked="#escolheu11" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="207.0">
-         <image>
-            <Image url="@../img/Icon11.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op14" fitHeight="151.0" fitWidth="155.0" layoutX="161.0" layoutY="317.0" onMouseClicked="#escolheu14" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="317.0">
-         <image>
-            <Image url="@../img/Icon14.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op15" fitHeight="150.0" fitWidth="200.0" layoutX="211.0" layoutY="275.0" onMouseClicked="#escolheu15" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="158.0" AnchorPane.topAnchor="313.0">
-         <image>
-            <Image url="@../img/Icon15.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="op16" fitHeight="150.0" fitWidth="200.0" layoutX="451.0" layoutY="275.0" onMouseClicked="#escolheu16" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="313.0">
-         <image>
-            <Image url="@../img/Icon16.png" />
-         </image>
-      </ImageView>
+      <VBox layoutX="51.0" layoutY="31.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="op3" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu3" pickOnBounds="false" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op1" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu1" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon1.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+                  <ImageView fx:id="op4" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu4" pickOnBounds="false" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon4.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op2" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu2" pickOnBounds="false" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon2.png" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="op7" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu7" pickOnBounds="false" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon7.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op9" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu9" pickOnBounds="false" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon9.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op8" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu8" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon8.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op5" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon5.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="op6" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon6.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op10" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu10" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon10.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op12" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu12" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon12.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op13" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu13" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon13.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="op16" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu16" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon16.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op11" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu11" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon11.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op14" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu14" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon14.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="op15" fitHeight="122.0" fitWidth="125.0" onMouseClicked="#escolheu15" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Icon15.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
