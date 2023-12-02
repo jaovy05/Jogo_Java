@@ -6,6 +6,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.SelecaoController">
@@ -20,96 +22,128 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="IconP0" fitHeight="141.0" fitWidth="140.0" layoutX="32.0" layoutY="49.0" onMouseClicked="#escolherIconP0">
-         <image>
-           <Image url="@../img/IconVazio.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="NomeP0" layoutX="160.0" layoutY="115.0" onKeyReleased="#verificarJogadores">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="160.0" layoutY="95.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="IconP1" fitHeight="141.0" fitWidth="140.0" layoutX="361.0" layoutY="45.0" onMouseClicked="#escolherIconP1">
-         <image>
-            <Image url="@../img/IconVazio.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="NomeP1" layoutX="489.0" layoutY="111.0" onKeyReleased="#verificarJogadores">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="489.0" layoutY="91.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="IconP2" fitHeight="141.0" fitWidth="140.0" layoutX="32.0" layoutY="155.0" onMouseClicked="#escolherIconP2">
-         <image>
-            <Image url="@../img/IconVazio.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="NomeP2" layoutX="160.0" layoutY="221.0" onKeyReleased="#verificarJogadores">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="160.0" layoutY="201.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="IconP3" fitHeight="141.0" fitWidth="140.0" layoutX="361.0" layoutY="151.0" onMouseClicked="#escolherIconP3">
-         <image>
-            <Image url="@../img/IconVazio.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="NomeP3" layoutX="489.0" layoutY="217.0" onKeyReleased="#verificarJogadores">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="489.0" layoutY="197.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="IconP4" fitHeight="141.0" fitWidth="140.0" layoutX="32.0" layoutY="253.0" onMouseClicked="#escolherIconP4">
-         <image>
-            <Image url="@../img/IconVazio.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="NomeP4" layoutX="160.0" layoutY="319.0" onKeyReleased="#verificarJogadores">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="160.0" layoutY="299.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fx:id="IconP5" fitHeight="141.0" fitWidth="140.0" layoutX="361.0" layoutY="249.0" onMouseClicked="#escolherIconP5">
-         <image>
-            <Image url="@../img/IconVazio.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="NomeP5" layoutX="489.0" layoutY="315.0" onKeyReleased="#verificarJogadores">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </TextField>
-      <Label layoutX="489.0" layoutY="295.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="324.0" layoutY="359.0" mnemonicParsing="false" onAction="#iniciarJogo" prefHeight="41.0" prefWidth="75.0" style="-fx-border-color: #00C06e; -fx-background-color: #007C78;" text="Iniciar" />
+      <VBox layoutY="30.0" prefHeight="414.0" prefWidth="288.0" AnchorPane.leftAnchor="5.0">
+         <children>
+            <Pane prefHeight="129.0" prefWidth="288.0">
+               <children>
+                  <ImageView fx:id="IconP0" fitHeight="107.0" fitWidth="110.0" layoutX="-5.0" layoutY="18.0" onMouseClicked="#escolherIconP0">
+                     <image>
+                       <Image url="@../img/IconVazio.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="NomeP0" layoutX="105.0" layoutY="72.0" onKeyReleased="#verificarJogadores">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="105.0" layoutY="52.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="129.0" prefWidth="288.0">
+               <children>
+                  <Label layoutX="105.0" layoutY="52.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="NomeP1" layoutX="105.0" layoutY="72.0" onKeyReleased="#verificarJogadores">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="IconP1" fitHeight="107.0" fitWidth="110.0" layoutX="-5.0" layoutY="18.0" onMouseClicked="#escolherIconP1">
+                     <image>
+                        <Image url="@../img/IconVazio.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane prefHeight="129.0" prefWidth="288.0">
+               <children>
+                  <ImageView fx:id="IconP2" fitHeight="107.0" fitWidth="110.0" layoutX="-5.0" layoutY="18.0" onMouseClicked="#escolherIconP2">
+                     <image>
+                        <Image url="@../img/IconVazio.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="NomeP2" layoutX="105.0" layoutY="72.0" onKeyReleased="#verificarJogadores">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="105.0" layoutY="52.0" prefHeight="17.0" prefWidth="288.0" text="Nome:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox layoutX="451.0" layoutY="30.0" prefHeight="401.0" prefWidth="288.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <Pane prefHeight="129.0" prefWidth="288.0">
+               <children>
+                  <ImageView fx:id="IconP3" fitHeight="107.0" fitWidth="110.0" layoutX="-5.0" layoutY="18.0" onMouseClicked="#escolherIconP3">
+                     <image>
+                        <Image url="@../img/IconVazio.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="NomeP3" layoutX="105.0" layoutY="72.0" onKeyReleased="#verificarJogadores">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="105.0" layoutY="52.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="129.0" prefWidth="288.0">
+               <children>
+                  <ImageView fx:id="IconP4" fitHeight="107.0" fitWidth="110.0" layoutX="-5.0" layoutY="18.0" onMouseClicked="#escolherIconP4">
+                     <image>
+                        <Image url="@../img/IconVazio.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="NomeP4" layoutX="105.0" layoutY="72.0" onKeyReleased="#verificarJogadores">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="105.0" layoutY="52.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane prefHeight="129.0" prefWidth="288.0">
+               <children>
+                  <ImageView fx:id="IconP5" fitHeight="107.0" fitWidth="110.0" layoutX="-5.0" layoutY="18.0" onMouseClicked="#escolherIconP5">
+                     <image>
+                        <Image url="@../img/IconVazio.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="NomeP5" layoutX="105.0" layoutY="72.0" onKeyReleased="#verificarJogadores">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="105.0" layoutY="52.0" prefHeight="17.0" prefWidth="149.0" text="Nome:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Button layoutX="310.0" layoutY="199.0" mnemonicParsing="false" onAction="#iniciarJogo" prefHeight="41.0" prefWidth="75.0" style="-fx-border-color: #00C06e; -fx-background-color: #007C78;" text="Iniciar" />
    </children>
 </AnchorPane>
