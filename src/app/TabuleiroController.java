@@ -42,9 +42,9 @@ public class TabuleiroController implements Initializable {
         if(indexJogador < tabuleiro.getJogadores().size()){ 
             Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
             jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
-            if(indexJogador + 1 == tabuleiro.getJogadores().size()){
+            if(indexJogador + 1 == tabuleiro.getJogadores().size()){              
                 tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas);
-                indexJogador = 0;
+                indexJogador = 0;      
             } else {
                 indexJogador++;
             }

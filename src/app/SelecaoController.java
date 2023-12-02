@@ -109,7 +109,6 @@ public class SelecaoController implements Initializable{
             JOptionPane.showConfirmDialog(null,"É necessário pelo menos 3 jogadores", "Aleta", JOptionPane.WARNING_MESSAGE );
         }
     }
-        
 
     @FXML
     void escolherIconP0(MouseEvent event) throws IOException {

@@ -5,6 +5,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
@@ -13,6 +14,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
 import javafx.util.Duration;
 
 public class Tabuleiro {
@@ -63,12 +67,12 @@ public class Tabuleiro {
         }
     }
 
-    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJodadas)  {
+    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJogadas)  {
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
         for(int i = 0; i < jogadores.size(); i++){
-            ImageView cartaJogada = (ImageView) cartasJodadas.getChildren().get(i);
-            Label nome = (Label) cartasJodadas.getChildren().get(i + 6);
+            ImageView cartaJogada = (ImageView) cartasJogadas.getChildren().get(i);
+            Label nome = (Label) cartasJogadas.getChildren().get(i + 6);
             Jogador jogador = jogadores.get(i);
             cartaJogada.setImage(new Image(getClass().getResourceAsStream(jogador.getCartaJogada().toString())));
             nome.setText(jogador.getNome());
@@ -77,16 +81,31 @@ public class Tabuleiro {
         
         for (int i = 0; i < jogadores.size(); i++) {
             Jogador j = jogadores.get(i);
-           
+            final int index = i;
     
-            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {
+            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {   
                 @Override
                 public void handle(ActionEvent event) { 
+                    Node removido =  cartasJogadas.getChildren().get(0);
+                    if(removido instanceof Rectangle)
+                        cartasJogadas.getChildren().remove(0);
+                    
+                    Rectangle rectangle = new Rectangle(93, 130, Color.WHITE);
+                    rectangle.setStrokeWidth(10);
+                    rectangle.setStrokeType(StrokeType.INSIDE);
+                    rectangle.setStroke(Color.web("#63b573"));
+                    
+                    ImageView carta = (ImageView) cartasJogadas.getChildren().get(index);                   
+                    cartasJogadas.getChildren().add(rectangle);
+                    rectangle.toBack();
+                    rectangle.setX(carta.getLayoutX() - 5);
+                    rectangle.setY(carta.getLayoutY() - 5); 
+
                     Integer indexAntecessor = antecessor(j.getCartaJogada());
                     if (indexAntecessor == -1) {
                         int posMaior = posMaiorElemento();
                         j.comprarLinha(tabuleiro.get(posMaior));
-                        tabuleiro.get(posMaior).addLast(j.getCartaJogada());
+                        tabuleiro.get(posMaior).addLast(j.getCartaJogada());                 
                     } else {
                         if (tabuleiro.get(indexAntecessor).size() == 5) {
                             j.comprarLinha(tabuleiro.get(indexAntecessor));
@@ -99,6 +118,15 @@ public class Tabuleiro {
             });
             timeline.getKeyFrames().add(keyFrame);
         }
+
+        KeyFrame finalFrame = new KeyFrame(Duration.seconds(jogadores.size() + 1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                cartasJogadas.getChildren().remove(0);
+            }
+        });
+        timeline.getKeyFrames().add(finalFrame);
+
         timeline.play();
     }
 
