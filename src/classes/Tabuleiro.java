@@ -77,11 +77,12 @@ public class Tabuleiro {
         
         for (int i = 0; i < jogadores.size(); i++) {
             Jogador j = jogadores.get(i);
-            Integer indexAntecessor = antecessor(j.getCartaJogada());
+           
     
             KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {
                 @Override
-                public void handle(ActionEvent event) {
+                public void handle(ActionEvent event) { 
+                    Integer indexAntecessor = antecessor(j.getCartaJogada());
                     if (indexAntecessor == -1) {
                         int posMaior = posMaiorElemento();
                         j.comprarLinha(tabuleiro.get(posMaior));
