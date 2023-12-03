@@ -39,8 +39,7 @@ public class PodioController implements Initializable{
 
             
             if(i < vencedores && i != 0){
-               /*  System.out.println(vencedores);
-                System.out.println();*/
+                campeao.setText("Campeões");
                 Rectangle rectangle = (Rectangle) podio.getChildren().get(i);
                 rectangle.setHeight(233);
                 fotoJogador.setLayoutY(14);
