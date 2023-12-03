@@ -46,7 +46,7 @@ public class Tabuleiro {
         }
         //mostra a situação inicial do tabuleiro
         printTabuleiro(tabuleiroVBox);
- 
+        
     }
     
     public void printTabuleiro(VBox tabuleiroVBox){
