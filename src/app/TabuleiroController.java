@@ -24,7 +24,7 @@ public class TabuleiroController implements Initializable {
     private VBox tabuleiroEsqueleto;
 
     @FXML
-    private AnchorPane mao, cartasJogadas;
+    private AnchorPane mao, cartasJogadas, jogadorPane;
 
     @FXML
     private Pane perfil;
@@ -44,8 +44,9 @@ public class TabuleiroController implements Initializable {
         Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
         if(indexCarta < jogador.getMaoJogador().size()){        
             jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
-            if(indexJogador + 1 == tabuleiro.getJogadores().size()){              
-                tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas);
+            if(indexJogador + 1 == tabuleiro.getJogadores().size()){    
+                jogadorPane.setVisible(false);         
+                tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas, jogadorPane);
                 indexJogador = 0;      
             } else {
                 indexJogador++;

@@ -180,7 +180,7 @@
             </HBox>
          </children>
       </VBox>
-      <AnchorPane layoutX="673.0" layoutY="42.0" prefHeight="386.0" prefWidth="623.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane fx:id="jogadorPane" layoutX="673.0" layoutY="42.0" prefHeight="386.0" prefWidth="623.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Pane fx:id="perfil" prefHeight="113.0" prefWidth="456.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>

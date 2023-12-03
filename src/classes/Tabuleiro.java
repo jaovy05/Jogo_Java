@@ -2,6 +2,8 @@ package classes;
 
 import java.io.IOException;
 import java.util.*;
+
+import app.PodioController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -72,10 +74,10 @@ public class Tabuleiro {
         }
     }
 
-    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJogadas)  {
+    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJogadas, AnchorPane jogadorPane)  {
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
-
+        
         for(int i = 0; i < jogadores.size(); i++){
             ImageView cartaJogada = (ImageView) cartasJogadas.getChildren().get(i);
             Label nome = (Label) cartasJogadas.getChildren().get(i + 6);
@@ -84,6 +86,7 @@ public class Tabuleiro {
             nome.setText(jogador.getNome());
             
         }
+        cartasJogadas.setVisible(true);
         Timeline timeline = new Timeline();
         
         for (int i = 0; i < jogadores.size(); i++) {
@@ -133,6 +136,8 @@ public class Tabuleiro {
             @Override
             public void handle(ActionEvent event){
                 cartasJogadas.getChildren().remove(0);
+                jogadorPane.setVisible(true);
+                cartasJogadas.setVisible(false);
             }
         });
         timeline.getKeyFrames().add(finalFrame);
@@ -181,12 +186,15 @@ public class Tabuleiro {
     }
 
     public void venceu(ActionEvent event) throws IOException{
-        Jogador ganhou = jogadores.get(0);
-        for(Jogador j : jogadores) 
-            if(j.getPontos() < ganhou.getPontos())
-                ganhou = j;
-        
-        System.out.println("Campeão: " + ganhou.getNome());
+        int vencedores = 1;
+        Collections.sort(jogadores);
+
+        for(int i = 1; i < jogadores.size() && jogadores.get(i).getPontos() == jogadores.get(i - 1).getPontos(); i++)
+            vencedores++;
+
+        PodioController.setVencedores(vencedores);
+        PodioController.setJogadores(jogadores);
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../app/podioLayout.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
