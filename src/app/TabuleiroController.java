@@ -39,8 +39,8 @@ public class TabuleiroController implements Initializable {
     
     @FXML
     void cartaJogada(MouseEvent event)   {
-        if(indexJogador < tabuleiro.getJogadores().size()){ 
-            Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
+        Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
+        if(indexCarta < jogador.getMaoJogador().size()){        
             jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
             if(indexJogador + 1 == tabuleiro.getJogadores().size()){              
                 tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas);
