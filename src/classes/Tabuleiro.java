@@ -1,11 +1,15 @@
 package classes;
 
+import java.io.IOException;
 import java.util.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
@@ -17,6 +21,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Tabuleiro {
@@ -145,31 +150,6 @@ public class Tabuleiro {
         pontos.setText("Pontos : " + jogador.getPontos());
     }
 
-    public Carta escolherCarta(Jogador jogador, AnchorPane mao){
-        for(int i = 0; i < jogador.getMaoJogador().size(); i++) {
-            Image image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
-            ImageView imageView = (ImageView) mao.getChildren().get(0);
-            imageView.setImage(image);
-        }
-        System.out.println();
-
-        try {
-            Integer numero = sc.nextInt();
-            for(Carta c : jogador.getMaoJogador()) 
-            //verifica se o número informado está na mão
-                if(c.getNumero() == numero) {
-                    //se tiver, remove da mão e retorna a carta
-                    jogador.getMaoJogador().remove(c);
-                    return c;
-                }
-        } catch (Exception e) {
-            throw new RuntimeException("Escolha uma carta válida");
-        }
-        //se não encontrar retorna exception
-        throw new RuntimeException("Escolha uma carta válida");
-    }
-    
-
     public Integer antecessor(Carta cartaJogada){
         Integer antecessor = 0, pos = -1, ultimaCartadaLinha;
         for(int i = 0; i < 5; i++){
@@ -200,24 +180,19 @@ public class Tabuleiro {
         return pos;
     }
 
-    public void venceu(){
+    public void venceu(ActionEvent event) throws IOException{
         Jogador ganhou = jogadores.get(0);
         for(Jogador j : jogadores) 
             if(j.getPontos() < ganhou.getPontos())
                 ganhou = j;
         
         System.out.println("Campeão: " + ganhou.getNome());
-        for(Carta c : ganhou.getMaoMorta())
-            System.out.print(c);
-        System.out.println();
-        for(Jogador j : jogadores)
-            if(j != ganhou){
-                System.out.println("Nome: " + j.getNome());
-                for(Carta c : j.getMaoMorta())
-                    System.out.print(c);
-                System.out.println();
-            }
-        
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../app/podioLayout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(tela);
+        stage.show();
     }
 
     public void mostrarMao(Jogador jogador, AnchorPane mao){
