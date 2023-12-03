@@ -1,9 +1,11 @@
 package app;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import classes.Jogador;
 import classes.Tabuleiro;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -67,6 +69,11 @@ public class TabuleiroController implements Initializable {
         ImageView carta = (ImageView) event.getSource();
         ajusteTamanho(carta, 120, 83, 0);
         organizar();
+    }
+
+    @FXML
+    void vencedor(ActionEvent event) throws IOException {
+        tabuleiro.venceu(event);
     }
 
     private void ajusteTamanho(ImageView carta, double altura, double largura, double y){
