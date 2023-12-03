@@ -70,12 +70,14 @@ public class Tabuleiro {
     public void rodada(VBox tabuleiroVBox, AnchorPane cartasJogadas)  {
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
+
         for(int i = 0; i < jogadores.size(); i++){
             ImageView cartaJogada = (ImageView) cartasJogadas.getChildren().get(i);
             Label nome = (Label) cartasJogadas.getChildren().get(i + 6);
             Jogador jogador = jogadores.get(i);
             cartaJogada.setImage(new Image(getClass().getResourceAsStream(jogador.getCartaJogada().toString())));
             nome.setText(jogador.getNome());
+            
         }
         Timeline timeline = new Timeline();
         
@@ -93,25 +95,28 @@ public class Tabuleiro {
                     Rectangle rectangle = new Rectangle(93, 130, Color.WHITE);
                     rectangle.setStrokeWidth(10);
                     rectangle.setStrokeType(StrokeType.INSIDE);
-                    rectangle.setStroke(Color.web("#63b573"));
+                    rectangle.setStroke(Color.web("#63b573"));  
                     
+                    Integer indexAntecessor = antecessor(j.getCartaJogada());
+                    if (indexAntecessor == -1) {
+                        int posMaior = posMaiorElemento();
+                        j.comprarLinha(tabuleiro.get(posMaior));
+                        tabuleiro.get(posMaior).addLast(j.getCartaJogada());   
+                        rectangle.setStroke(Color.web("#ab1d2b"));                
+                    } else {
+                        if (tabuleiro.get(indexAntecessor).size() == 5) {
+                            j.comprarLinha(tabuleiro.get(indexAntecessor));
+                            rectangle.setStroke(Color.web("#ab1d2b")); 
+                        }
+                        tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
+                    }
+
                     ImageView carta = (ImageView) cartasJogadas.getChildren().get(index);                   
                     cartasJogadas.getChildren().add(rectangle);
                     rectangle.toBack();
                     rectangle.setX(carta.getLayoutX() - 5);
                     rectangle.setY(carta.getLayoutY() - 5); 
 
-                    Integer indexAntecessor = antecessor(j.getCartaJogada());
-                    if (indexAntecessor == -1) {
-                        int posMaior = posMaiorElemento();
-                        j.comprarLinha(tabuleiro.get(posMaior));
-                        tabuleiro.get(posMaior).addLast(j.getCartaJogada());                 
-                    } else {
-                        if (tabuleiro.get(indexAntecessor).size() == 5) {
-                            j.comprarLinha(tabuleiro.get(indexAntecessor));
-                        }
-                        tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
-                    }
                     j.pontos();
                     printTabuleiro(tabuleiroVBox);
                 }
@@ -216,7 +221,6 @@ public class Tabuleiro {
     }
 
     public void mostrarMao(Jogador jogador, AnchorPane mao){
-        
         for(int i = 0; i < 12; i++) { 
             ImageView imageView = (ImageView) mao.getChildren().get(i);
             Image image;
