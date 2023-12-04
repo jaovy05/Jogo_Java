@@ -30,12 +30,12 @@ public class SelecaoController implements Initializable{
     public static List<Image> imagens = new ArrayList<>();
     
     static{
-        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
-        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
-        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
-        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
-        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
-        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
+        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconUser.png")));
+        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconUser.png")));
+        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconUser.png")));
+        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconUser.png")));
+        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconUser.png")));
+        imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconUser.png")));
         nomes.add("");
         nomes.add("");
         nomes.add("");
@@ -96,12 +96,19 @@ public class SelecaoController implements Initializable{
         qtdJogadores.setText(jogadoresvalidos + "/6");
         //if(jogadoresvalidos < 3) qtdJogadores.setStyle("-fx-text-fill: red;");
         //else qtdJogadores.setStyle("-fx-text-fill: blue;");
+        
         if (jogadoresvalidos < 3) {
             qtdJogadores.setStyle("-fx-text-fill: red;");
-            iniciarButton.setStyle("-fx-border-color: #00C06e; -fx-background-color: #FF6347;"); // Red color
+            iniciarButton.setStyle("-fx-border-color: #00C06e;" +
+                                    "-fx-background-color: #FF6347;" +
+                                    "-fx-background-radius: 20px;" +
+                                    "-fx-border-radius 20px;" ); // Red color
         } else {
             qtdJogadores.setStyle("-fx-text-fill: blue;");
-            iniciarButton.setStyle("-fx-border-color: #00C06e; -fx-background-color: #32CD32;"); // Green color
+            iniciarButton.setStyle("-fx-border-color: #00C06e;" + 
+                                    "-fx-background-color: #32CD32;" +
+                                    "-fx-background-radius: 20px;" +
+                                    "-fx-border-radius 20px;" ); // Green color
         }
     }
 

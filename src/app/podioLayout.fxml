@@ -12,6 +12,11 @@
 
 <AnchorPane maxHeight="574.0" maxWidth="678.0" minHeight="574.0" minWidth="678.0" prefHeight="574.0" prefWidth="678.0" style="-fx-background-color: #e3c317;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.PodioController">
    <children>
+      <ImageView fitHeight="574.0" fitWidth="678.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/backgroundPodio.png" />
+         </image>
+      </ImageView>
       <AnchorPane fx:id="podio" layoutX="239.0" layoutY="101.0" maxHeight="373.0" maxWidth="496.0" minHeight="373.0" minWidth="496.0" prefHeight="373.0" prefWidth="496.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="88.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="233.0" layoutX="165.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="165.0" AnchorPane.bottomAnchor="0.0" />

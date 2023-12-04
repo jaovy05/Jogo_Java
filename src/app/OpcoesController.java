@@ -115,7 +115,7 @@ public class OpcoesController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("selecaoLayout.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(tela);
         stage.show();
     }
