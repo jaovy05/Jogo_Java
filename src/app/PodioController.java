@@ -1,15 +1,24 @@
 package app;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import classes.Jogador;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 public class PodioController implements Initializable{
     private static List<Jogador> jogadores;
@@ -59,6 +68,30 @@ public class PodioController implements Initializable{
 
     }
 
+    @FXML
+    void AbrirMenu(ActionEvent event) throws IOException {
+        zerar();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menuLayout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
+        stage.setScene(tela);
+        stage.show();
+        
+        stage.show();
+    }
+
+    @FXML
+    void novoJogo(ActionEvent event) throws IOException {
+        zerar();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("selecaoLayout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
+        stage.setScene(tela);
+        stage.show();
+    }
+
     public static void setJogadores(List<Jogador> jogador) {
         jogadores = jogador;
     }
@@ -67,4 +100,11 @@ public class PodioController implements Initializable{
        vencedores = ganhadores;
        System.out.println(ganhadores);
     }
+
+    private void zerar(){
+        Image vazio = new Image(getClass().getResourceAsStream("../img/iconUser.png"));
+        for(int i = 0; i < 6; i++){
+            SelecaoController.imagens.set(i, vazio);
+            SelecaoController.nomes.set(i, "");
+    }}
 }

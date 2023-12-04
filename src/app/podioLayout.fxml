@@ -81,19 +81,15 @@
       </ImageView>
       <MenuBar layoutX="546.0" layoutY="20.0" style="-fx-background-color: #b59b12;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Detalhes">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" text="Pontuação" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Menu">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+               <MenuItem mnemonicParsing="false" onAction="#AbrirMenu" text="Inicio" />
+               <MenuItem mnemonicParsing="false" onAction="#novoJogo" text="Novo Jogo" />
             </items>
           </Menu>
         </menus>

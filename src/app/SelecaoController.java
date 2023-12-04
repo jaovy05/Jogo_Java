@@ -100,15 +100,15 @@ public class SelecaoController implements Initializable{
         if (jogadoresvalidos < 3) {
             qtdJogadores.setStyle("-fx-text-fill: red;");
             iniciarButton.setStyle("-fx-border-color: #00C06e;" +
-                                    "-fx-background-color: #FF6347;" +
+                                    "-fx-background-color: #FF6347;" + // Red color
                                     "-fx-background-radius: 20px;" +
-                                    "-fx-border-radius 20px;" ); // Red color
+                                    "-fx-border-radius: 20px;"); 
         } else {
             qtdJogadores.setStyle("-fx-text-fill: blue;");
             iniciarButton.setStyle("-fx-border-color: #00C06e;" + 
-                                    "-fx-background-color: #32CD32;" +
+                                    "-fx-background-color: #32CD32;" + // Green color
                                     "-fx-background-radius: 20px;" +
-                                    "-fx-border-radius 20px;" ); // Green color
+                                    "-fx-border-radius: 20px;"); 
         }
     }
 
