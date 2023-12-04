@@ -83,7 +83,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Detalhes">
             <items>
-              <MenuItem mnemonicParsing="false" text="Pontuação" />
+              <MenuItem mnemonicParsing="false" onAction="#detalhesPontos" text="Pontuação" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Menu">

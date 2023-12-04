@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<TitledPane animated="false" collapsible="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="669.0" text="Pontuação" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.PontuacaoController">
+  <content>
+    <AnchorPane cacheShape="false" minHeight="0.0" minWidth="0.0" prefHeight="419.0" prefWidth="667.0" scaleShape="false">
+         <children>
+            <VBox fx:id="jogadores" layoutX="4.0" layoutY="20.0" prefHeight="434.0" prefWidth="669.0" spacing="5.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <AnchorPane prefHeight="70.0" prefWidth="641.0">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" layoutX="-9.0" layoutY="16.0" prefHeight="38.0" prefWidth="34.0" text="1°" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="21.0" prefWidth="121.0" text="João Vitor Gomes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="35.0" prefHeight="20.0" prefWidth="122.0" text="24 pontos">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="155.0" layoutY="4.0" prefHeight="62.0" prefWidth="486.0">
+                           <children>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="325.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="350.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="375.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="425.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="450.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="70.0" prefWidth="646.0">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" layoutX="-9.0" layoutY="16.0" prefHeight="38.0" prefWidth="34.0" text="1°" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="21.0" prefWidth="121.0" text="João Vitor Gomes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="35.0" prefWidth="121.0" text="24 pontos">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="155.0" layoutY="4.0" prefHeight="62.0" prefWidth="486.0">
+                           <children>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="325.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="350.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="375.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="425.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="450.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="80.0" prefHeight="70.0" prefWidth="646.0">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" layoutX="-9.0" layoutY="16.0" prefHeight="38.0" prefWidth="34.0" text="1°" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="21.0" prefWidth="121.0" text="João Vitor Gomes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="35.0" prefWidth="121.0" text="24 pontos">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="155.0" layoutY="4.0" prefHeight="62.0" prefWidth="486.0">
+                           <children>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="325.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="350.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="375.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="425.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="450.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="160.0" prefHeight="70.0" prefWidth="646.0">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" layoutX="-9.0" layoutY="16.0" prefHeight="38.0" prefWidth="34.0" text="1°" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="21.0" prefWidth="121.0" text="João Vitor Gomes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="35.0" prefWidth="121.0" text="24 pontos">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="155.0" layoutY="4.0" prefHeight="62.0" prefWidth="486.0">
+                           <children>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="325.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="350.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="375.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="425.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="450.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="235.0" prefHeight="70.0" prefWidth="646.0">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" layoutX="-9.0" layoutY="16.0" prefHeight="38.0" prefWidth="34.0" text="1°" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="21.0" prefWidth="121.0" text="João Vitor Gomes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="35.0" prefWidth="121.0" text="24 pontos">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="155.0" layoutY="4.0" prefHeight="62.0" prefWidth="486.0">
+                           <children>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="325.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="350.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="375.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="425.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="450.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="10.0" layoutY="310.0" prefHeight="70.0" prefWidth="646.0">
+                     <children>
+                        <Label alignment="CENTER" graphicTextGap="0.0" layoutX="-9.0" layoutY="16.0" prefHeight="38.0" prefWidth="34.0" text="1°" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="21.0" prefWidth="121.0" text="João Vitor Gomes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="34.0" layoutY="35.0" prefWidth="121.0" text="24 pontos">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="155.0" layoutY="4.0" prefHeight="62.0" prefWidth="486.0">
+                           <children>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="75.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="125.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="150.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="225.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="250.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="275.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="325.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="350.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="375.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="425.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="62.0" fitWidth="51.0" onMouseEntered="#destacar" onMouseExited="#ocultar"  layoutX="450.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/1.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </VBox>
+         </children></AnchorPane>
+  </content>
+</TitledPane>

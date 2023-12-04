@@ -18,7 +18,7 @@ public class TabuleiroController implements Initializable {
     public static int indexJogador = 0;
     public static int indexCarta = -1;
     private Tabuleiro tabuleiro;
-    int rodada = 9;
+    int rodada = 10;
 
     @FXML
     private VBox tabuleiroEsqueleto;

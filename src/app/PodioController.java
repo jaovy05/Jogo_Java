@@ -5,11 +5,13 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 import classes.Jogador;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -19,6 +21,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class PodioController implements Initializable{
     private static List<Jogador> jogadores;
@@ -35,7 +38,22 @@ public class PodioController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        Timeline timeline = new Timeline();
         for(int i = 0; i < 3; i++) {
+            final int index = i;
+            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {   
+                @Override
+                public void handle(ActionEvent event) {
+                    Jogador jogador = jogadores.get(index);
+                    Label nomeJogador = new Label(jogador.getNome()); 
+                    ImageView fotoJogador = new ImageView(jogador.getFoto());
+                    Label pontosJogador = new Label(String.valueOf(jogador.getPontos()));
+
+                    
+
+                }
+            });
+            timeline.getKeyFrames().add(keyFrame);
             Jogador jogador = jogadores.get(i);
 
             Label nomeJogador = (Label) podio.getChildren().get(i + 3);
@@ -62,10 +80,25 @@ public class PodioController implements Initializable{
                 imageView.setFitWidth(98);
                 imageView.setLayoutX(fotoJogador.getLayoutX() + 71);
                 imageView.setLayoutY(fotoJogador.getLayoutY() + 35);
-                System.out.println(podio.getPrefWidth());
             }
         }
+        timeline.play();
+    }
 
+    @FXML
+    void detalhesPontos(ActionEvent event) throws IOException {
+        zerar();
+        PontuacaoController.setJogadoresList(jogadores);
+        PontuacaoController.setVencedores(vencedores);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("pontuacaoLayout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = (Stage) ((MenuItem) event.getSource()).getParentPopup().getOwnerWindow();
+        stage.setScene(tela);
+        stage.show();
+        
+        stage.show();
     }
 
     @FXML
@@ -98,7 +131,6 @@ public class PodioController implements Initializable{
 
     public static void setVencedores(int ganhadores) {
        vencedores = ganhadores;
-       System.out.println(ganhadores);
     }
 
     private void zerar(){
