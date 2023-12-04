@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -31,6 +32,7 @@ public class Tabuleiro {
     private List<Jogador> jogadores = new ArrayList<>();
     private List<LinkedList<Carta>> tabuleiro;
     Scanner sc = new Scanner(System.in);
+    Timeline timeline;;
 
     public Tabuleiro(List<String> nomes, VBox tabuleiroVBox, List<Image> fotos){
         
@@ -87,12 +89,12 @@ public class Tabuleiro {
             
         }
         cartasJogadas.setVisible(true);
-        Timeline timeline = new Timeline();
-        
+
+        timeline = new Timeline();
         for (int i = 0; i < jogadores.size(); i++) {
             Jogador j = jogadores.get(i);
             final int index = i;
-    
+       
             KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {   
                 @Override
                 public void handle(ActionEvent event) { 
@@ -185,21 +187,26 @@ public class Tabuleiro {
         return pos;
     }
 
-    public void venceu(ActionEvent event) throws IOException{
+    public void venceu(MouseEvent event) throws IOException{
         int vencedores = 1;
         Collections.sort(jogadores);
 
         for(int i = 1; i < jogadores.size() && jogadores.get(i).getPontos() == jogadores.get(i - 1).getPontos(); i++)
             vencedores++;
-
+  
         PodioController.setVencedores(vencedores);
         PodioController.setJogadores(jogadores);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../app/podioLayout.fxml"));
         Parent root = fxmlLoader.load();
         Scene tela = new Scene(root);
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage stage = new Stage();
         stage.setScene(tela);
+        stage.centerOnScreen();
+
+        Stage fecharTabuleiro =  (Stage) ((Node)event.getSource()).getScene().getWindow();
+        fecharTabuleiro.close();
+        
         stage.show();
     }
 
@@ -218,5 +225,9 @@ public class Tabuleiro {
     
     public List<Jogador> getJogadores() {
         return jogadores;
+    }
+
+    public Timeline getTimeline() {
+        return timeline;
     }
 }

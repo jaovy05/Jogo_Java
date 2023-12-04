@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import classes.Jogador;
 import classes.Tabuleiro;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -19,6 +18,7 @@ public class TabuleiroController implements Initializable {
     public static int indexJogador = 0;
     public static int indexCarta = -1;
     private Tabuleiro tabuleiro;
+    int rodada = 9;
 
     @FXML
     private VBox tabuleiroEsqueleto;
@@ -40,18 +40,30 @@ public class TabuleiroController implements Initializable {
     }
     
     @FXML
-    void cartaJogada(MouseEvent event)   {
+    void cartaJogada(MouseEvent event) throws IOException   {
         Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
         if(indexCarta < jogador.getMaoJogador().size()){        
             jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
             if(indexJogador + 1 == tabuleiro.getJogadores().size()){    
-                jogadorPane.setVisible(false);         
-                tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas, jogadorPane);
-                indexJogador = 0;      
+                    jogadorPane.setVisible(false);         
+                    tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas, jogadorPane);
+                    rodada++;
+                    indexJogador = 0;  
+                    
+                    tabuleiro.getTimeline().setOnFinished(e -> {
+                        if(rodada == 12) {
+                            try {
+                                vencedor(event);
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }); 
             } else {
                 indexJogador++;
             }
-            organizar();
+
+            organizar(); 
             tabuleiro.mostrarMao(tabuleiro.getJogadores().get(indexJogador), mao);
             tabuleiro.printJogador(tabuleiro.getJogadores().get(indexJogador), perfil);
         }
@@ -72,8 +84,8 @@ public class TabuleiroController implements Initializable {
         organizar();
     }
 
-    @FXML
-    void vencedor(ActionEvent event) throws IOException {
+    
+    void vencedor(MouseEvent event) throws IOException {
         tabuleiro.venceu(event);
     }
 
