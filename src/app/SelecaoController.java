@@ -5,9 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-
 import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +28,7 @@ public class SelecaoController implements Initializable{
     public static List<String> nomes = new ArrayList<>();
     public static int index;
     public static List<Image> imagens = new ArrayList<>();
+    
     static{
         imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
         imagens.add(new Image(SelecaoController.class.getResourceAsStream("../img/IconVazio.png")));
@@ -59,21 +58,21 @@ public class SelecaoController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //adiciona imagens 
         IconP0.setImage(imagens.get(0));
         IconP1.setImage(imagens.get(1));
         IconP2.setImage(imagens.get(2));
         IconP3.setImage(imagens.get(3));
         IconP4.setImage(imagens.get(4));
-        IconP5.setImage(imagens.get(5));
-        
+        IconP5.setImage(imagens.get(5));     
+        //adiciona os nomes
         NomeP0.setText(nomes.get(0));
         NomeP1.setText(nomes.get(1));
         NomeP2.setText(nomes.get(2));
         NomeP3.setText(nomes.get(3));
         NomeP4.setText(nomes.get(4));
         NomeP5.setText(nomes.get(5));
-        
-              
+
         verificarJogadores(null);
     }
     
@@ -93,7 +92,6 @@ public class SelecaoController implements Initializable{
         nomes.set(3, NomeP3.getText());
         nomes.set(4, NomeP4.getText());
         nomes.set(5, NomeP5.getText());
-        
 
         qtdJogadores.setText(jogadoresvalidos + "/6");
         //if(jogadoresvalidos < 3) qtdJogadores.setStyle("-fx-text-fill: red;");
@@ -107,7 +105,7 @@ public class SelecaoController implements Initializable{
         }
     }
 
-     @FXML
+    @FXML
     void iniciarJogo(ActionEvent event) throws IOException {
         if(jogadoresvalidos >= 3){
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tabuleiroLayout.fxml"));
@@ -120,7 +118,6 @@ public class SelecaoController implements Initializable{
             JOptionPane.showConfirmDialog(null,"É necessário pelo menos 3 jogadores", "Aleta", JOptionPane.WARNING_MESSAGE );
         }
     }
-        
 
     @FXML
     void escolherIconP0(MouseEvent event) throws IOException {

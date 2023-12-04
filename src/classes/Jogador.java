@@ -3,7 +3,7 @@ package classes;
 import java.util.*;
 import javafx.scene.image.Image;
 
-public class Jogador {
+public class Jogador implements Comparable<Jogador> {
     private String nome;
     private List<Carta> maoJogador;
     private List<Carta> maoMorta;
@@ -69,5 +69,10 @@ public class Jogador {
     
     public Image getFoto() {
         return foto;
+    }
+
+    @Override
+    public int compareTo(Jogador j) {
+        return this.pontos - j.pontos;
     }
 }

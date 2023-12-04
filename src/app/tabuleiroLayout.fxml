@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TabuleiroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1306.0" style="-fx-background-color: #aee8f2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.TabuleiroController">
    <children>
-      <VBox fx:id="tabuleiroEsqueleto" layoutX="75.0" layoutY="34.0" prefHeight="89.0" prefWidth="89.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="tabuleiroEsqueleto" layoutX="75.0" layoutY="34.0" prefHeight="89.0" prefWidth="89.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="2.0">
          <children>
             <HBox prefHeight="89.0" prefWidth="89.0" spacing="15.0">
                <children>
@@ -179,7 +179,7 @@
             </HBox>
          </children>
       </VBox>
-      <AnchorPane layoutX="673.0" layoutY="42.0" prefHeight="386.0" prefWidth="623.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane fx:id="jogadorPane" layoutX="673.0" layoutY="42.0" prefHeight="386.0" prefWidth="623.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Pane fx:id="perfil" prefHeight="113.0" prefWidth="456.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>

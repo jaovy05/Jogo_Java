@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="574.0" maxWidth="678.0" minHeight="574.0" minWidth="678.0" prefHeight="574.0" prefWidth="678.0" style="-fx-background-color: #e3c317;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.PodioController">
+   <children>
+      <AnchorPane fx:id="podio" layoutX="239.0" layoutY="101.0" maxHeight="373.0" maxWidth="496.0" minHeight="373.0" minWidth="496.0" prefHeight="373.0" prefWidth="496.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="88.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="233.0" layoutX="165.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="165.0" AnchorPane.bottomAnchor="0.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="141.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="165.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="1.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="66.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.5" width="165.0" AnchorPane.bottomAnchor="0.0" />
+            <Label alignment="CENTER" layoutX="164.0" layoutY="138.0" prefHeight="28.0" prefWidth="165.0" text="Valéria Faccin" textOverrun="CLIP">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="331.0" layoutY="233.0" prefHeight="27.0" prefWidth="165.0" text="João Vitor Gomes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="308.0" prefHeight="27.0" prefWidth="165.0" text="Bruno Neckel">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="127.0" fitWidth="127.0" layoutX="185.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/IconVazio.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="127.0" fitWidth="127.0" layoutX="349.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/IconVazio.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="127.0" fitWidth="127.0" layoutX="19.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/IconVazio.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="164.0" layoutY="170.0" prefHeight="25.0" prefWidth="165.0" text="20">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="331.0" layoutY="265.0" prefHeight="25.0" prefWidth="165.0" text="20">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutY="340.0" prefHeight="25.0" prefWidth="165.0" text="20">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="trofeu" fitHeight="98.0" fitWidth="95.0" layoutX="256.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 10;">
+               <image>
+                  <Image url="@../img/trofeu.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="233.0" fitWidth="599.0" layoutX="109.0" layoutY="-32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="103.0">
+         <image>
+            <Image url="@../img/faixa.png" />
+         </image>
+      </ImageView>
+      <MenuBar layoutX="546.0" layoutY="20.0" style="-fx-background-color: #b59b12;" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label fx:id="campeao" alignment="CENTER" layoutX="169.0" layoutY="32.0" prefHeight="66.0" prefWidth="337.0" style="-fx-font-weight: bold;" text="Campeão" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

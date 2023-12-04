@@ -1,5 +1,6 @@
 package app;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import classes.Jogador;
@@ -17,12 +18,13 @@ public class TabuleiroController implements Initializable {
     public static int indexJogador = 0;
     public static int indexCarta = -1;
     private Tabuleiro tabuleiro;
+    int rodada = 9;
 
     @FXML
     private VBox tabuleiroEsqueleto;
 
     @FXML
-    private AnchorPane mao, cartasJogadas;
+    private AnchorPane mao, cartasJogadas, jogadorPane;
 
     @FXML
     private Pane perfil;
@@ -38,17 +40,30 @@ public class TabuleiroController implements Initializable {
     }
     
     @FXML
-    void cartaJogada(MouseEvent event)   {
-        if(indexJogador < tabuleiro.getJogadores().size()){ 
-            Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
+    void cartaJogada(MouseEvent event) throws IOException   {
+        Jogador jogador = tabuleiro.getJogadores().get(indexJogador);
+        if(indexCarta < jogador.getMaoJogador().size()){        
             jogador.setCartaJogada(jogador.getMaoJogador().get(indexCarta));
-            if(indexJogador + 1 == tabuleiro.getJogadores().size()){
-                tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas);
-                indexJogador = 0;
+            if(indexJogador + 1 == tabuleiro.getJogadores().size()){    
+                    jogadorPane.setVisible(false);         
+                    tabuleiro.rodada(tabuleiroEsqueleto, cartasJogadas, jogadorPane);
+                    rodada++;
+                    indexJogador = 0;  
+                    
+                    tabuleiro.getTimeline().setOnFinished(e -> {
+                        if(rodada == 12) {
+                            try {
+                                vencedor(event);
+                            } catch (IOException ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                    }); 
             } else {
                 indexJogador++;
             }
-            organizar();
+
+            organizar(); 
             tabuleiro.mostrarMao(tabuleiro.getJogadores().get(indexJogador), mao);
             tabuleiro.printJogador(tabuleiro.getJogadores().get(indexJogador), perfil);
         }
@@ -67,6 +82,11 @@ public class TabuleiroController implements Initializable {
         ImageView carta = (ImageView) event.getSource();
         ajusteTamanho(carta, 120, 83, 0);
         organizar();
+    }
+
+    
+    void vencedor(MouseEvent event) throws IOException {
+        tabuleiro.venceu(event);
     }
 
     private void ajusteTamanho(ImageView carta, double altura, double largura, double y){

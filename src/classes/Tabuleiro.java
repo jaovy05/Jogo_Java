@@ -1,18 +1,30 @@
 package classes;
 
+import java.io.IOException;
 import java.util.*;
+
+import app.PodioController;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.StrokeType;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class Tabuleiro {
@@ -20,6 +32,7 @@ public class Tabuleiro {
     private List<Jogador> jogadores = new ArrayList<>();
     private List<LinkedList<Carta>> tabuleiro;
     Scanner sc = new Scanner(System.in);
+    Timeline timeline;;
 
     public Tabuleiro(List<String> nomes, VBox tabuleiroVBox, List<Image> fotos){
         
@@ -42,7 +55,7 @@ public class Tabuleiro {
         }
         //mostra a situação inicial do tabuleiro
         printTabuleiro(tabuleiroVBox);
- 
+        
     }
     
     public void printTabuleiro(VBox tabuleiroVBox){
@@ -63,42 +76,74 @@ public class Tabuleiro {
         }
     }
 
-    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJodadas)  {
+    public void rodada(VBox tabuleiroVBox, AnchorPane cartasJogadas, AnchorPane jogadorPane)  {
         //ordena os jogodares ordem crescente
         Collections.sort(jogadores, new Sort());
+        
         for(int i = 0; i < jogadores.size(); i++){
-            ImageView cartaJogada = (ImageView) cartasJodadas.getChildren().get(i);
-            Label nome = (Label) cartasJodadas.getChildren().get(i + 6);
+            ImageView cartaJogada = (ImageView) cartasJogadas.getChildren().get(i);
+            Label nome = (Label) cartasJogadas.getChildren().get(i + 6);
             Jogador jogador = jogadores.get(i);
             cartaJogada.setImage(new Image(getClass().getResourceAsStream(jogador.getCartaJogada().toString())));
             nome.setText(jogador.getNome());
+            
         }
-        Timeline timeline = new Timeline();
-        
+        cartasJogadas.setVisible(true);
+
+        timeline = new Timeline();
         for (int i = 0; i < jogadores.size(); i++) {
             Jogador j = jogadores.get(i);
-           
-    
-            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {
+            final int index = i;
+       
+            KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {   
                 @Override
                 public void handle(ActionEvent event) { 
+                    Node removido =  cartasJogadas.getChildren().get(0);
+                    if(removido instanceof Rectangle)
+                        cartasJogadas.getChildren().remove(0);
+                    
+                    Rectangle rectangle = new Rectangle(93, 130, Color.WHITE);
+                    rectangle.setStrokeWidth(10);
+                    rectangle.setStrokeType(StrokeType.INSIDE);
+                    rectangle.setStroke(Color.web("#63b573"));  
+                    
                     Integer indexAntecessor = antecessor(j.getCartaJogada());
                     if (indexAntecessor == -1) {
                         int posMaior = posMaiorElemento();
                         j.comprarLinha(tabuleiro.get(posMaior));
-                        tabuleiro.get(posMaior).addLast(j.getCartaJogada());
+                        tabuleiro.get(posMaior).addLast(j.getCartaJogada());   
+                        rectangle.setStroke(Color.web("#ab1d2b"));                
                     } else {
                         if (tabuleiro.get(indexAntecessor).size() == 5) {
                             j.comprarLinha(tabuleiro.get(indexAntecessor));
+                            rectangle.setStroke(Color.web("#ab1d2b")); 
                         }
                         tabuleiro.get(indexAntecessor).addLast(j.getCartaJogada());
                     }
+
+                    ImageView carta = (ImageView) cartasJogadas.getChildren().get(index);                   
+                    cartasJogadas.getChildren().add(rectangle);
+                    rectangle.toBack();
+                    rectangle.setX(carta.getLayoutX() - 5);
+                    rectangle.setY(carta.getLayoutY() - 5); 
+
                     j.pontos();
                     printTabuleiro(tabuleiroVBox);
                 }
             });
             timeline.getKeyFrames().add(keyFrame);
         }
+
+        KeyFrame finalFrame = new KeyFrame(Duration.seconds(jogadores.size() + 1), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event){
+                cartasJogadas.getChildren().remove(0);
+                jogadorPane.setVisible(true);
+                cartasJogadas.setVisible(false);
+            }
+        });
+        timeline.getKeyFrames().add(finalFrame);
+
         timeline.play();
     }
 
@@ -111,31 +156,6 @@ public class Tabuleiro {
         nome.getMenus().get(0).setText(jogador.getNome());
         pontos.setText("Pontos : " + jogador.getPontos());
     }
-
-    public Carta escolherCarta(Jogador jogador, AnchorPane mao){
-        for(int i = 0; i < jogador.getMaoJogador().size(); i++) {
-            Image image = new Image(getClass().getResourceAsStream(jogador.getMaoJogador().get(i).toString()));
-            ImageView imageView = (ImageView) mao.getChildren().get(0);
-            imageView.setImage(image);
-        }
-        System.out.println();
-
-        try {
-            Integer numero = sc.nextInt();
-            for(Carta c : jogador.getMaoJogador()) 
-            //verifica se o número informado está na mão
-                if(c.getNumero() == numero) {
-                    //se tiver, remove da mão e retorna a carta
-                    jogador.getMaoJogador().remove(c);
-                    return c;
-                }
-        } catch (Exception e) {
-            throw new RuntimeException("Escolha uma carta válida");
-        }
-        //se não encontrar retorna exception
-        throw new RuntimeException("Escolha uma carta válida");
-    }
-    
 
     public Integer antecessor(Carta cartaJogada){
         Integer antecessor = 0, pos = -1, ultimaCartadaLinha;
@@ -167,28 +187,30 @@ public class Tabuleiro {
         return pos;
     }
 
-    public void venceu(){
-        Jogador ganhou = jogadores.get(0);
-        for(Jogador j : jogadores) 
-            if(j.getPontos() < ganhou.getPontos())
-                ganhou = j;
+    public void venceu(MouseEvent event) throws IOException{
+        int vencedores = 1;
+        Collections.sort(jogadores);
+
+        for(int i = 1; i < jogadores.size() && jogadores.get(i).getPontos() == jogadores.get(i - 1).getPontos(); i++)
+            vencedores++;
+  
+        PodioController.setVencedores(vencedores);
+        PodioController.setJogadores(jogadores);
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../app/podioLayout.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene tela = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(tela);
+        stage.centerOnScreen();
+
+        Stage fecharTabuleiro =  (Stage) ((Node)event.getSource()).getScene().getWindow();
+        fecharTabuleiro.close();
         
-        System.out.println("Campeão: " + ganhou.getNome());
-        for(Carta c : ganhou.getMaoMorta())
-            System.out.print(c);
-        System.out.println();
-        for(Jogador j : jogadores)
-            if(j != ganhou){
-                System.out.println("Nome: " + j.getNome());
-                for(Carta c : j.getMaoMorta())
-                    System.out.print(c);
-                System.out.println();
-            }
-        
+        stage.show();
     }
 
     public void mostrarMao(Jogador jogador, AnchorPane mao){
-        
         for(int i = 0; i < 12; i++) { 
             ImageView imageView = (ImageView) mao.getChildren().get(i);
             Image image;
@@ -203,5 +225,9 @@ public class Tabuleiro {
     
     public List<Jogador> getJogadores() {
         return jogadores;
+    }
+
+    public Timeline getTimeline() {
+        return timeline;
     }
 }
