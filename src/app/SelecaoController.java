@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -52,6 +53,9 @@ public class SelecaoController implements Initializable{
 
     @FXML
     private Label qtdJogadores;
+
+    @FXML
+    private Button iniciarButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -92,8 +96,15 @@ public class SelecaoController implements Initializable{
         
 
         qtdJogadores.setText(jogadoresvalidos + "/6");
-        if(jogadoresvalidos < 3) qtdJogadores.setStyle("-fx-text-fill: red;");
-        else qtdJogadores.setStyle("-fx-text-fill: blue;");
+        //if(jogadoresvalidos < 3) qtdJogadores.setStyle("-fx-text-fill: red;");
+        //else qtdJogadores.setStyle("-fx-text-fill: blue;");
+        if (jogadoresvalidos < 3) {
+            qtdJogadores.setStyle("-fx-text-fill: red;");
+            iniciarButton.setStyle("-fx-border-color: #00C06e; -fx-background-color: #FF6347;"); // Red color
+        } else {
+            qtdJogadores.setStyle("-fx-text-fill: blue;");
+            iniciarButton.setStyle("-fx-border-color: #00C06e; -fx-background-color: #32CD32;"); // Green color
+        }
     }
 
      @FXML
