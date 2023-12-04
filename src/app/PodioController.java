@@ -12,14 +12,18 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -40,20 +44,54 @@ public class PodioController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         Timeline timeline = new Timeline();
         for(int i = 0; i < 3; i++) {
-            final int index = i;
+            /*final int index = i;
+         //   final int x = i * 165;
             KeyFrame keyFrame = new KeyFrame(Duration.seconds(i+1), new EventHandler<ActionEvent>() {   
                 @Override
                 public void handle(ActionEvent event) {
                     Jogador jogador = jogadores.get(index);
+
                     Label nomeJogador = new Label(jogador.getNome()); 
                     ImageView fotoJogador = new ImageView(jogador.getFoto());
                     Label pontosJogador = new Label(String.valueOf(jogador.getPontos()));
+                    Rectangle rectangle = new Rectangle();
+                    rectangle.setFill(Color.DODGERBLUE);
+                    fotoJogador.setFitWidth(127);
+                    fotoJogador.setFitHeight(127);
 
+                    if(index == 0){
+                        rectangle.setHeight(233);
+                        rectangle.setLayoutX(165);
+                    } else if (index == 1) {
+                        rectangle.setHeight(167);
+                         rectangle.setLayoutX(330);
+                    } else {
+                        rectangle.setHeight(66);
+                        rectangle.setLayoutX(0);
+                    }
                     
+                    rectangle.setWidth(165);
+                    
+                    podio.getChildren().add(rectangle);
+                    podio.getChildren().add(pontosJogador);
+                    podio.getChildren().add(fotoJogador);
+                    podio.getChildren().add(nomeJogador);
+                    nomeJogador.setPrefWidth(165);
+                    pontosJogador.setPrefWidth(165);
+                    nomeJogador.setContentDisplay(ContentDisplay.CENTER);
+                    pontosJogador.setContentDisplay(ContentDisplay.CENTER);
+                    AnchorPane.setBottomAnchor(rectangle, 0.0);
+                    
+                    nomeJogador.setLayoutY(376 - rectangle.getHeight());
+                    nomeJogador.setLayoutX(rectangle.getLayoutX());
+                    pontosJogador.setLayoutY(nomeJogador.getLayoutY() + 32);
+                    pontosJogador.setLayoutX(rectangle.getLayoutX());
+                    fotoJogador.setLayoutY(nomeJogador.getLayoutY() - 126);
+                    fotoJogador.setLayoutX(rectangle.getLayoutX() + 19);
 
                 }
             });
-            timeline.getKeyFrames().add(keyFrame);
+            timeline.getKeyFrames().add(keyFrame);*/
             Jogador jogador = jogadores.get(i);
 
             Label nomeJogador = (Label) podio.getChildren().get(i + 3);

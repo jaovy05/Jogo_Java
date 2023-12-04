@@ -25,7 +25,6 @@ public class PontuacaoController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         int tamanhoLista = jogadores.getChildren().size();
-        System.out.println(tamanhoLista);
         int pos = 1;
         for(int i = 0; i < 6; i++){ 
             AnchorPane painel = (AnchorPane) jogadores.getChildren().get(i);
